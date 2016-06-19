@@ -1,1 +1,74 @@
-Howdy!
+---
+layout: default
+---
+
+<p>
+  Hello! I am a software engineer with background on distributed systems,
+  software delivery, and engineering leadership. I'm good at turning business
+  problems into technical ones, and support engineering teams to solve them.
+</p>
+<p>
+  I work a Principal SWE at <a href="https://midokura.com/">Midokura</a>
+  building systems to manage fleets of intelligent devices within Sony's Edge AI
+  sensing platform, AITRIOS. I previously worked at <a
+  href="https://www.newrelic.com/">New Relic</a>, <a
+  href="https://www.adevinta.com/">Adevinta</a>, <a
+  href="https://www.lastfm.com/">Last.fm</a> and some others. For more info,
+  check out the <a href="{{ site.baseUrl }}/about">about section</a>.  </p>
+  
+  <p> Here I publish notes on topics related to software engineering, you can
+  get updates via <a href="https://newsletter.varoa.net/">mailing list</a> or <a
+  href="{{ " /feed.xml" | prepend: site.baseurl }}">RSS feed</a> (expect low
+  frequency, long form content. I'm also at <a rel="me"
+  href="https://twitter.com/srvaroa">Twitter/X</a>, <a rel="me"
+  href="https://hachyderm.io/@srvaroa">Mastodon</a> &amp; <a rel="me"
+  href="https://bsky.app/profile/varoa.net">Bluesky</a>, and always glad to get
+  an <a href="mailto:anglorvaroa@gmail.com">email</a>.  </p> <div
+  class="mailing-list"> <script
+  src="https://cdn.jsdelivr.net/ghost/signup-form@~0.1/umd/signup-form.min.js"
+  data-button-color="#4595DB" data-button-text-color="#FFFFFF"
+  data-site="https://newsletter.varoa.net/" async> </script> </div> <p> {% for
+  post in site.posts limit:1 %} My most recent piece is: <a href="{{ post.url
+  }}">{{ post.title }}</a>.  {% endfor %} </p>
+  
+<h2>Highlights</h2>
+
+<p>
+  <ul class="post-list">
+    <li>
+      <a href="{{ site.baseUrl }}/2024/01/09/how-organisations-cripple-engineering-teams-with-good-intentions.html">
+        How organisations cripple engineering teams with good intentions</a>.
+        Engineers benefit from participating in product, sales, customer
+        support, etc. But let's not forget they have a job to do.
+    </li>
+    <li>
+      <a href="{{ site.baseUrl }}/paas/infrastructure/platform/kubernetes/cloud/2020/01/02/talk-how-to-build-a-paas-for-1500-engineers.html">
+      How to build a PaaS for 1500 engineers</a>.
+      Deep dive into the strategic principles we followed at Adevinta to
+      build an internal platform to support 1500 engineers across some of
+      the biggest online marketplaces in Europe and South America).
+    </li>
+    <li><a href="{{ site.baseUrl }}/jvm/java/openjdk/biased-locking/2017/01/30/hashCode.html">
+      How does the default hashCode() work (and how it impacts biased locking)</a>.
+      Wondering about the default `hashCode()` I ended up in a deep,
+      although fascinating rabbit hole around the JVM's biased locking
+      implementation.
+    </li>
+    <li><a href="{{ site.baseUrl }}/kubernetes/migration/latency/dns/java/aws/microservices/2019/10/22/kubernetes-added-a-0-to-my-latency.html">"Kubernetes made my latency 10x higher"</a>.
+      Blending complex systems often has surprising effects that are hard to
+      predict.
+    </li>
+  </ul>
+</p>
+
+<h2>Archive</h2>
+
+<p>
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul> 
+</p>

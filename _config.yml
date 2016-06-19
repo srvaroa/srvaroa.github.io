@@ -1,0 +1,21 @@
+# Site settings
+title: Galo Navarro
+email: anglorvaroa@gmail.com
+description: >
+  Hi I'm Galo. This is my personal site. I'm a software engineer with a
+  background in distributed systems, scalability and data plumbing. This
+  site collects some of the stuff I make, mostly about and around
+  software engineering.
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "https://varoa.net"
+twitter_username: srvaroa
+github_username: srvaroa
+future: false
+
+# Build settings
+markdown: kramdown
+
+# Plugins
+plugins:
+    - jekyll-redirect-from
+
