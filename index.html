@@ -1,1 +1,46 @@
-Howdy!
+---
+layout: default
+---
+
+<p>
+  Hello! I am a software engineer with background on distributed
+  systems, software delivery. I'm good at turning business problems into
+  technical ones, and support engineering teams to solve them
+  effectively.
+</p>
+<p>
+  I work a Principal SWE at <a href="https://midokura.com/">Midokura</a>
+  building systems to manage fleets of intelligent devices within Sony's Edge AI
+  sensing platform, AITRIOS. I previously worked at <a
+  href="https://www.newrelic.com/">New Relic</a>, <a
+  href="https://www.adevinta.com/">Adevinta</a>, <a
+  href="https://www.lastfm.com/">Last.fm</a> and some others. For more info,
+  check out the <a href="{{ site.baseUrl }}/about">about section</a>.  </p>
+  
+  <p>
+    I write about software engineering, you can
+    join the <a href="https://newsletter.varoa.net">mailing list</a> using the form below, or via <a
+    href="{{ " /feed.xml" | prepend: site.baseurl }}">RSS feed</a> (expect low
+    frequency, long form content.) I'm also at
+    <a rel="me" href="https://bsky.app/profile/varoa.net">Bluesky</a> and
+    <a rel="me" href="https://twitter.com/srvaroa">Twitter/X</a>.
+  </p>
+  
+  <div class="mailing-list">
+    <script src="https://cdn.jsdelivr.net/ghost/signup-form@~0.1/umd/signup-form.min.js"
+            data-button-color="#4595DB" data-button-text-color="#FFFFFF"
+            data-site="https://newsletter.varoa.net/" async>
+    </script>
+  </div>
+  
+<h2>Archive</h2>
+
+<p>
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul> 
+</p>

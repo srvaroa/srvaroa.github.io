@@ -1,0 +1,48 @@
+---
+layout: default
+---
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
+
+  <p class="post-meta">
+  <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time></p>
+
+
+  <hr />
+
+    <p>
+    Any thoughts? <a href="mailto:anglorvaroa@gmail.com">send me an email!</a>
+    </p>
+  </div>
+
+</article>
+
+<p style='font-size:90%; font-style:italic; text-align:center; margin-top:30px;'>
+  To get notified on new posts, follow me on
+  <a rel="me" href="https://bsky.app/profile/varoa.net">Bluesky</a> /
+  <a rel="me" href="https://twitter.com/srvaroa">Twitter</a>, or subscribe via <a href="{{ "/feed.xml" | prepend: site.baseurl
+    }}">RSS feed</a> or email:
+  <div class="mailing-list">
+    <script
+      src="https://cdn.jsdelivr.net/ghost/signup-form@~0.1/umd/signup-form.min.js" data-button-color="#4595DB" data-button-text-color="#FFFFFF" data-site="https://newsletter.varoa.net/" async>
+    </script>
+  </div>
+</p>
+
+<h2>Archive</h2>
+
+<p>
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul> 
+</p>

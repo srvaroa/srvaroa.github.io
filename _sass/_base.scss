@@ -1,0 +1,164 @@
+body {
+  max-width: 800px;
+  margin: 0px auto;
+  background-color: rgb(235, 235, 235);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  color: rgb(55, 53, 47);
+  text-align: left;
+  line-height: 1.5;
+  letter-spacing: 0.2px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 20px;
+}
+
+::selection {
+  color: black;
+  background-color: yellow;
+}
+
+a {
+  text-decoration: none;
+  color: #4595DB;
+
+  &:hover {
+    text-decoration: underline;
+  } 
+}
+
+.site-header {
+  border-bottom: 1px solid #aaaaaa;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .site-title {
+      font-weight: bold;
+      font-size: 1.5em;
+      align-self: end;
+      color: #444;
+  }
+
+  a {
+    color: #848484;
+    text-transform: uppercase;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  nav {
+    align-self: end;
+    font-size: 1em;
+    letter-spacing: 1px;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: right;
+    padding: 0px;
+    margin: 0px;
+
+    li {
+      margin-left: 20px;
+    }
+  }
+}
+
+.page-content {
+  margin-top: 40px;
+  min-height: calc(80vh - 160px);
+  h1, h2, h3 {
+    color: #5C5C5C;
+  }
+  hr {
+    width: 20px;
+  }
+  li {
+    margin-bottom: 10px;
+  }
+
+  pre.highlight {
+    padding: 20px;
+    font-family: Arial;
+    font-size: 0.8em;
+    background: #222;
+    color: #ddd;
+  }
+
+  .post-meta {
+    text-align: right;
+    font-size: 0.9rem;
+  }
+
+  .post-content {
+    h2, h3 {
+      margin-top: 30px;
+    }
+  }
+
+}
+
+blockquote {
+  font-style: italic;
+}
+
+.image-box {
+  text-align: center;
+  img {
+    max-width: 80%;
+  }
+  .image_foot {
+    display: block;
+  }
+}
+
+.box {
+  background-color: rgb(225, 230, 240);
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+  text-align: center;
+}
+
+h1, h2 {
+  font-size: 1.3em;
+}
+
+h3 {
+  font-size: 1.1em;
+  font-weight: normal;
+}
+
+.site-footer {
+  margin-top: 40px;
+  border-top: 1px solid #aaaaaa;
+  padding-top: 20px;
+  font-size: 0.8em;
+  text-align: center;
+
+}
+
+.mailing-list {
+  min-height: 20px;
+  max-width: 440px;
+  width: 50%;
+  margin: 20px auto;
+}
+
+@media (max-width: 768px) {
+  header {
+    display: grid;
+    grid-template-rows: 1fr;
+    .site-title {
+      font-size: 1.2em;
+    }
+    nav {
+      font-size: 0.8em;
+    }
+  }
+}
