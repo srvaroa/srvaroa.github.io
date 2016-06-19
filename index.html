@@ -1,1 +1,30 @@
-Howdy!
+---
+layout: default
+---
+
+<div class="home">
+  <p>Hello.  I'm a software engineer specialised on scalability,
+  distributed systems, performance.  I have over a decade of experience
+  building infrastructure, backend services, and data plumbing at places
+  like
+  <a href="https://last.fm/">Last.fm</a>,
+  <a href="https://tuenti.com/">Tuenti</a>,
+  <a href="https://midokura.com">Midokura</a>, and currently
+  <a href="http://zhilabs.com/">Zhilabs</a>.  I'm based in Barcelona.
+  </p>
+  <p>I'm posting here some notes and materials about topics of my
+  interest (JVM, performance, memory management, concurrency, etc.)
+  </p>
+
+  <h1 class="page-heading">Content (<a href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS</a>)</h1>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <h2><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+</div>

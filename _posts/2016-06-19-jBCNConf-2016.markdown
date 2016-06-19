@@ -1,0 +1,24 @@
+---
+layout: post
+title:  "JBCNConf 2016 workshop: performance analysis and optimisation on the JVM"
+date:   2016-06-19 18:10:02 +0200
+categories: talks jvm performance java
+---
+
+I hosted a workshop along with <a
+href="https://twitter.com/gontanon">Guillermo</a> at the <a
+href="http://www.jbcnconf.com/2016/">JBCNConf 2016</a>.  The materials
+are online at <a href="https://github.com/srvaroa/jbcnconf"
+alt="jbcnconf16: performance analysis and optimisation workshop
+materials">GitHub</a> for your perusal.  The abstract contains info
+about the contents and there are instructions in the repository.
+Questions, comments and corrections are very welcome.
+
+The workshop covered some concurrency examples from the (too) many other
+topics discussed in the performance talk I gave a couple of weeks
+earlier at the <a
+href="http://www.meetup.com/es-ES/BarcelonaJUG/events/230521537/">BCNJUG
+Meetup</a>.  Feel free to check out the slides at <a
+href="http://www.slideshare.net/srvaroa/perf-analysis-jvm201605274a0c-63644547">Slideshare</a>
+or just <a href="/assets/perf_analysis_jvm.20160527.pdf">download the
+pdf</a>.
