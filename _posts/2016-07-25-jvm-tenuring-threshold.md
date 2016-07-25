@@ -66,3 +66,5 @@ runs.  If that's the case, as live objects in survivor regions are
 visited, all objects that have `object.age > newAge` will be tenured
 (including those that had `age < threshold` at a previous collection,
 but now exceed it).
+
+PRs with corrections are very welcome.
