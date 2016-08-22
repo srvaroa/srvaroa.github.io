@@ -143,6 +143,8 @@
 .post-meta {
     font-size: $small-font-size;
     color: $grey-color;
+    display: inline-block;
+    width: 100px;
 }
 
 .post-list h2 {
