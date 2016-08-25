@@ -10,7 +10,7 @@ question](https://stackoverflow.com/questions/22350002/how-does-the-dynamic-tenu
 in Stack Overflow.  GC features and its many knobs are profusely
 documented (search adaptive policy, tenuring threshold..) but asking too
 many questions inevitably leads to hitting the confines of the
-proverbial black block.  Yeah, tenuring thresholds are dynamic.. but
+proverbial black box.  Yeah, tenuring thresholds are dynamic.. but
 how, why and when do they change?
 
 Luckily, the [JVM
