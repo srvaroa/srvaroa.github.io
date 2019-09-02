@@ -1,20 +1,19 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
 title: Galo Navarro
-email: 
-description: > # this means to ignore newlines until "baseurl:"
-  My personal site.
+email: anglorvaroa@gmail.com
+description: >
+  This is my personal site.  I'm a Principal Software Engineer at Adevinta,
+  I work on developer tools and cloud infrastructure and have a background
+  on backend/systems engineering, distributed systems, continuous delivery.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://srvaroa.github.io" # the base hostname & protocol for your site
+url: "https://srvaroa.github.io" # the base hostname & protocol for your site
 twitter_username: srvaroa
-github_username:  srvaroa
+github_username: srvaroa
 
 # Build settings
 markdown: kramdown
 google_analytics: UA-83414155-1
+
+# Plugins
+plugins:
+    - jekyll-redirect-from
