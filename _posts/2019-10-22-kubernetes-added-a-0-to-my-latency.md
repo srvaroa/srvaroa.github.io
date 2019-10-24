@@ -13,10 +13,10 @@ which power some of the main online marketplaces in Spain (Infojobs,
 Fotocasa, etc.)
 
 After we had the application deployed in Kubernetes and routed some
-production traffic to it and things started looking worrisome. Request
-latencies in the Kubernetes deployment were up to x10 higher than on the
-EC2.  Unless we found a solution this would becomea hard blocker not
-only to migrate this microservice, but could also jettison the entire
+production traffic to it, things started looking worrisome. Request
+latencies in the Kubernetes deployment were up to x10 higher than on
+EC2.  Unless we found a solution this would not only become a hard
+blocker to migrate this microservice, but could also jettison the entire
 project.
 
 ## Why is latency so much higher in Kubernetes than EC2?
@@ -57,10 +57,10 @@ We quickly discarded some likely suspects that could have appeared with
 the change of runtime. The JVM version was identical.  Issues related to
 containerisation were discarded as the application already ran in
 containers on EC2.  It wasn't related to load, as we saw high latencies
-even with 1 request per second.  GC pauses were neglibible.
+even with 1 request per second.  GC pauses were negligible.
 
 One of our Kubernetes admins asked whether the application had any
-external dependencies as DNS resolution has caused similar problems in
+external dependencies as DNS resolution had caused similar problems in
 the past, this was our best hypothesis so far.
 
 ## Hypothesis 1: DNS resolution
@@ -108,8 +108,8 @@ But this was strange for two reasons:
 To confirm the DNS hypothesis we decided to avoid DNS resolution and see
 if the problem disappeared.  Our first attempt was to have the
 application talk directly to the Elasticsearch IP, rather than the
-domain name.  This required changing code and a new deploy so, we
-simply added a line mapping the domain to its IP in `/etc/hosts`:
+domain name.  This required changing code and a new deploy so instead
+we simply added a line mapping the domain to its IP in `/etc/hosts`:
 
     34.55.5.111 elastic.spain.adevinta.com
 
@@ -130,9 +130,9 @@ my-service:/capture.pcap capture.pcap`) to inspect it with
 [Wireshark](https://wiki.wireshark.org/FrontPage).  
 
 There was nothing suspicious with DNS queries (except a detail I'll
-mention at the bottom.)  But something in the way our service handled
-each request seemed strange.   Below is a screenshot of the capture,
-showing the reception of a request until the start of the response.
+mention later.)  But something in the way our service handled each
+request seemed strange.  Below is a screenshot of the capture, showing
+the reception of a request until the start of the response.
 
 <img src="/assets/tcpdump_dns.jpg" align="center"/>
 
@@ -149,7 +149,7 @@ request to the Elasticsearch instance (you don't see the TCP handshake
 because it was using an existing TCP connection.)  This took 18ms.
 
 So far this makes sense, and the times roughly fit in the overall
-response latencies we expected (~20-30ms measured from the client)
+response latencies we expected (~20-30ms measured from the client).
 
 But inbetween both exchanges, the blue section consumes 86ms.  What was
 going on there? At packet 333, our service sent an HTTP GET request to
