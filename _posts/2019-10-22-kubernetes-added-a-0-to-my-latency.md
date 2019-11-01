@@ -24,7 +24,7 @@ project.
 To pinpoint the bottleneck we collected metrics for the entire request
 path.  The architecture is simple, an API Gateway (Zuul) that proxies
 requests to the microservice instances in EC2 or Kubernetes.  In
-Kubernetes, we use the NGINX Ingress Controller and backends are
+Kubernetes, we use the NGINX Ingress controller and backends are
 ordinary
 [Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
 objects running a JVM application based in Spring.
@@ -53,8 +53,8 @@ The problem seemed to be upstream latency at the backend (I marked the
 connection with "xx" in the graph). When the application was deployed in
 EC2 it took ~20ms to respond.  In Kubernetes it was taking 100-200 ms.
 
-We quickly discarded some likely suspects that could have appeared with
-the change of runtime. The JVM version was identical.  Issues related to
+We quickly discarded likely suspects that could have appeared with the
+change of runtime. The JVM version was identical.  Issues related to
 containerisation were discarded as the application already ran in
 containers on EC2.  It wasn't related to load, as we saw high latencies
 even with 1 request per second.  GC pauses were negligible.
