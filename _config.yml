@@ -9,6 +9,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://srvaroa.github.io" # the base hostname & protocol for your site
 twitter_username: srvaroa
 github_username: srvaroa
+future: false
 
 # Build settings
 markdown: kramdown
@@ -17,3 +18,4 @@ google_analytics: UA-83414155-1
 # Plugins
 plugins:
     - jekyll-redirect-from
+

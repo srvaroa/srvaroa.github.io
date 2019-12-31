@@ -208,11 +208,13 @@ teams an Ikea-like platform that they must assemble piece by piece.
 </p>
 
 **The main value we provide is in the joints, the articulation, the
-glue.  In how we integrate together all these systems**.  This is
-critical for three key reasons:
+glue.  In how we integrate together all these systems**.  Our PaaS
+favours composition of multiple modular components, becoming a
+[pierceable abstraction](https://lethain.com/pierceable-abstractions/).
+The main benefits we get are:
 
-* We avoid fighting a losing battle with commercial companies.  Each of
-  those systems have at least one whole company behind it.  It's hardly
+* Avoid losing battles with commercial companies.  Each of our
+  components has at least one whole company behind it.  It's hardly
   realistic to expect that we can dedicate 5-7 of our engineers (1/4th
   of the Platform team!) to build in-house alternatives to a CI system,
   a CD system, a metrics platform, etc. that have 20 or 50 times that
@@ -221,11 +223,13 @@ critical for three key reasons:
   competitors are more likely to focus on what's generic to larger
   portions of the industry. 
 * Well defined articulations become escape hatches for those teams that
-  can't or won't use the entire bundle.  This is good for us: teams
-  benefit from some of our tools, and they act as low-friction "gateway
-  drugs" to the full PaaS.  We often see how teams that adopt one tool
-  gradually adopt more as they realize it's worth outsourcing the
-  undifferentiated heavy lifting of dev tools and infra.
+  can't or won't use the entire bundle.  This is a requirement to be
+  able to support a highly heterogeneous population of companies and
+  teams as we do. But it's also good for us as it increases adoption,
+  and creates low-friction "gateway drugs" to the full PaaS.  We often
+  see how teams that adopt one tool gradually adopt more organically as
+  they gain trust and realize we can relieve them from doing
+  a lot of undifferentiated heavy lifting.
 * The same flexibility enables us to replace individual pieces when it
   makes sense, causing minimal impact for the users.  One of our current
   initiatives is to ensure that upgrading or switching any of those
