@@ -173,7 +173,7 @@ that those properties remain within a fast-moving industry.
 
 ## Our PaaS
 
-My team focuses on a PaaS that helps engineers accross Adevinta build,
+My team focuses on a PaaS that helps engineers across Adevinta build,
 deploy and operate software in the cloud.  We focus mainly on stateless
 workloads (e.g. microservices.)
 
