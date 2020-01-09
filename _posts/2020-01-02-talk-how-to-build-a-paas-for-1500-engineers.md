@@ -115,13 +115,13 @@ They don't smell of money, right?  Fiction represents them in this way
 because they belong to a cost centre.  They pay AWS bills, buy
 computers. In other words, money exits the company through them. 
 
-Profit centres tend to have a crisp value proposition proposition that
-is easy to see and understand.  It's the opposite for cost centres.
-This doesn't mean that they give no value to the company.  On the
-contrary: that Kubernetes cluster is critical for the business.  What is
-hard is explaining to the people in the first picture why the
-engineering team should spend cycles migrating from EC2 to Kubernetes
-instead of just shipping more money-generating features.
+Profit centres tend to have a crisp value proposition that is easy to
+see and understand.  It's the opposite for cost centres.  This doesn't
+mean that they give no value to the company.  On the contrary: that
+Kubernetes cluster is critical for the business.  What is hard is
+explaining to the people in the first picture why the engineering team
+should spend cycles migrating from EC2 to Kubernetes instead of just
+shipping more money-generating features.
 
 In a way, cost centres are valuable to the extent that they power-up the
 profit centres.  This is why **Platform teams should be aware that they
@@ -132,7 +132,7 @@ else, provide whatever these people do?  Can't we make use of those
 [many open source projects](https://landscape.cncf.io/) funded by
 dozens of commercial companies, and use the headcount elsewhere?
 
-In 2019, Technical Infrastructure is a hot market.  While I gave this
+In 2020, Technical Infrastructure is a hot market.  While I gave this
 talk, Amazon was running [Re:Invent](https://reinvent.awsevents.com/) in
 Las Vegas.  The first day they announced [Quantum computing as a
 service](https://aws.amazon.com/blogs/aws/amazon-braket-get-started-with-quantum-computing/?tag=theverge02-20).
@@ -154,7 +154,7 @@ is hopelessly.. small.
 </p>
 
 And those internal demos are great, don't get me wrong, a lot of effort
-and that. But when a Platform team is (intentionally or not) building
+and that.  But when a Platform team is (intentionally or not) building
 systems that have 3rd party alternatives they are competing in an uneven
 playing field.  **A Platform team should really avoid competing against
 AWS, Google, or any commercial company**.  It doesn't matter if their
@@ -168,8 +168,8 @@ at the product?
 To recap so far: because Platform teams are cost centers, they must
 really focus on formulating a clear and realistic value proposition that
 is relevant to the business. They must also ensure that their impact is
-intelligible to the business, visible, and that it remains relevant
-within a fast-moving industry.
+intelligible to the business, and visible.  Finally, they must ensure
+that those properties remain within a fast-moving industry.
 
 ## Our PaaS
 
@@ -226,9 +226,9 @@ The main benefits are:
   components has at least one whole company behind it.  It's hardly
   realistic to expect that we can dedicate 5-7 of our engineers (1/4th
   of the team!) to build in-house alternatives to a CI system, a CD
-  system, a metrics platform, etc. that have 20 or 50 times that
-  capacity. Instead, we focus on what is specific for *our* company,
-  tailoring off-the-shelf solutions to *our* needs.  Commercial
+  system, a metrics platform, etc. against businesses that have 20 or 50
+  times that capacity. Instead, we focus on what is specific for *our*
+  company, tailoring off-the-shelf solutions to *our* needs.  Commercial
   competitors are more likely to focus on what's generic to larger
   portions of the industry. 
 * Well defined articulations become escape hatches for those teams that
@@ -469,7 +469,7 @@ generated through our company's SSO.  They get metrics automatically
 scraped and sent to Datadog or our internal Prometheus, as they chose
 with a simple config option.  The same feature is provided for logs.
 
-Users can avoid learning the full Kubernets and use
+Users can avoid learning the full Kubernetes and use
 [FIAAS](https://fiaas.github.io/), a commodity abstraction on top of
 Kubernetes. It was created in-house at [one of our
 marketplaces](finn.no) ~7 years ago and was OSS'd in early 2019.  
