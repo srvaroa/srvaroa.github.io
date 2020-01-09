@@ -281,7 +281,7 @@ some of the automation you just mentioned seems very similar to what is
 available in the public GitHub.  Does that mean your team has just
 become obsolete?*"
 
-Remember the point about creating differenciators.  The core
+Remember the point about creating differentiators.  The core
 functionality that makes the PaaS (things like "running builds" or
 "store these metrics and let me query them", or "do `$something` when a
 PR is created") will become commoditized sooner or later. But glue is a
@@ -386,7 +386,7 @@ for teams to understand and make informed decisions about their
 
 Again, does this have some overlap with tools like
 [SonarQube](https://www.sonarqube.org/)?  Definitely.  But we have
-differenciators.  We can analyze everything in the dev process, not just
+differentiators.  We can analyze everything in the dev process, not just
 code quality.  We can tailor to the deploy and release workflows most
 common to our teams.  We can enrich data with organisational information
 specific to Adevinta's org chart.  We can correlate quality with other
