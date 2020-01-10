@@ -547,7 +547,7 @@ a more professional product.
 The team in charge of those automation and UIs has been using
 instrumentation data collected in the onboarding process to polish the
 experience, improve the failure rate and cover corner cases.  Last
-quarter quarter they moved on to solving other pain points in the
+quarter they moved on to solving other pain points in the
 platform.  For example, troubleshooting a failed deploy.  Right after
 Christmas we plan to release a team dashboard with all applications
 maintained by a given team.  It summarizes status for each, and
