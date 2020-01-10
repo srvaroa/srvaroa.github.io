@@ -557,7 +557,7 @@ PaaS.  Again, glue.
 
 ### Change hurts, we should feel it too
 
-Regardless of the effort we put in improving the onboarding experience
+Regardless of the effort we put in to improving the onboarding experience
 for our users, at the end of the day we're moving engineers from a known
 territory, their on-prem infra, EC2, or wherever they run their
 services today, to an unknown one.  At some point, every migration
@@ -617,7 +617,7 @@ Star](https://amplitude.com/blog/2018/03/21/product-north-star-metric).
 
 We believe it is a good proxy for productive habits that we want to
 incentivise: deployments are easy and automated, work reaches users
-early, defects can be repaired quickly.  For us, more frequent
+early, and defects can be repaired quickly.  For us, more frequent
 deployments have two positive implications: more services use our PaaS,
 and those that use it behave productively by deploying more often.  We
 only count "Successful" deployments to ensure that our tools help and
