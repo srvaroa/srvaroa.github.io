@@ -483,7 +483,7 @@ We do full-stack aware upgrades.  Because Google or AWS may upgrade your
 Kubernetes version, [but will not care about the integrity of everything
 you've got running
 there](https://deploy.live/blog/the-shipwreck-of-gke-cluster-upgrade/).
-We upgrade at a slower pace than GKE/EKS, but when do we ensure that the
+We upgrade at a slower pace than GKE/EKS, but when we do we ensure that the
 entire stack bundled in our cluster works, not just the core of
 Kubernetes. 
 
@@ -536,7 +536,7 @@ resumes the process when we've unblocked it.
 There is a point about the importance of automation here, but I want to
 stress something else.  If you buy the proposition that Platform teams
 have a significant degree of competing scope with commercial companies,
-**UX spacialists are a must-have**.  A team big enough to to serve
+**UX spacialists are a must-have**.  A team big enough to serve
 hundreds of engineers must reserve headcount for a good UX designer.  It
 will pay off.  Not only will you stop inflicting backend-made-UIs to
 your engineers, but also because the Platform team will learn how to
@@ -547,7 +547,7 @@ a more professional product.
 The team in charge of those automation and UIs has been using
 instrumentation data collected in the onboarding process to polish the
 experience, improve the failure rate and cover corner cases.  Last
-quarter quarter they moved on to solving other pain points in the
+quarter they moved on to solving other pain points in the
 platform.  For example, troubleshooting a failed deploy.  Right after
 Christmas we plan to release a team dashboard with all applications
 maintained by a given team.  It summarizes status for each, and
@@ -557,7 +557,7 @@ PaaS.  Again, glue.
 
 ### Change hurts, we should feel it too
 
-Regardless of the effort we put in improving the onboarding experience
+Regardless of the effort we put in to improving the onboarding experience
 for our users, at the end of the day we're moving engineers from a known
 territory, their on-prem infra, EC2, or wherever they run their
 services today, to an unknown one.  At some point, every migration
@@ -617,7 +617,7 @@ Star](https://amplitude.com/blog/2018/03/21/product-north-star-metric).
 
 We believe it is a good proxy for productive habits that we want to
 incentivise: deployments are easy and automated, work reaches users
-early, defects can be repaired quickly.  For us, more frequent
+early, and defects can be repaired quickly.  For us, more frequent
 deployments have two positive implications: more services use our PaaS,
 and those that use it behave productively by deploying more often.  We
 only count "Successful" deployments to ensure that our tools help and
