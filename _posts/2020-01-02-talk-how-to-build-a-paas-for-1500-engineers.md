@@ -12,7 +12,10 @@ I'd speak over them, edited the text, and added some of the most
 relevant slides inbetween paragraphs.
 [Let me know](https://twitter.com/srvaroa) how it works.*
 
+*[Discussion in Hacker News](https://news.ycombinator.com/item?id=22004133)*
+
 --
+
 
 Today's topic is about Technical Infrastructure, a term I found first in
 [a great talk by Will Larson](https://lethain.com/srecon-emea-2019/).
