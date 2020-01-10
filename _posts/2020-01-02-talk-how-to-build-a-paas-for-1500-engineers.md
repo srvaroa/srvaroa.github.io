@@ -483,7 +483,7 @@ We do full-stack aware upgrades.  Because Google or AWS may upgrade your
 Kubernetes version, [but will not care about the integrity of everything
 you've got running
 there](https://deploy.live/blog/the-shipwreck-of-gke-cluster-upgrade/).
-We upgrade at a slower pace than GKE/EKS, but when do we ensure that the
+We upgrade at a slower pace than GKE/EKS, but when we do we ensure that the
 entire stack bundled in our cluster works, not just the core of
 Kubernetes. 
 
@@ -536,7 +536,7 @@ resumes the process when we've unblocked it.
 There is a point about the importance of automation here, but I want to
 stress something else.  If you buy the proposition that Platform teams
 have a significant degree of competing scope with commercial companies,
-**UX spacialists are a must-have**.  A team big enough to to serve
+**UX spacialists are a must-have**.  A team big enough to serve
 hundreds of engineers must reserve headcount for a good UX designer.  It
 will pay off.  Not only will you stop inflicting backend-made-UIs to
 your engineers, but also because the Platform team will learn how to
