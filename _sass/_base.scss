@@ -204,3 +204,21 @@ pre {
         }
     }
 }
+
+span.image_foot {
+  width:75%;
+  margin:0 auto #{$spacing-unit} auto;
+  display:block;
+  font-style:italic;
+}
+
+table {
+  border:1px solid #ddd;
+  border-spacing:0;
+  margin:25px;
+}
+
+td, th {
+  border:1px solid #ddd;
+  padding: 5px;
+}
