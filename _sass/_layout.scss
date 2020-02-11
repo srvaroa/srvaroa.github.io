@@ -177,8 +177,25 @@
 .post-content {
     margin-bottom: $spacing-unit;
 
+    div.image-box {
+      text-align:center;
+      margin:$spacing-unit * 2 0;
+    }
+
+    div.image-box span {
+      text-align:center;
+      width:100%;
+      margin:0px;
+      font-size:90%;
+    }
+
+    li {
+      margin-bottom: $spacing-unit / 2;
+    }
+
     h2 {
         font-size: 32px;
+        margin-top: $spacing-unit * 2;
 
         @include media-query($on-laptop) {
             font-size: 28px;
@@ -200,4 +217,5 @@
             font-size: 18px;
         }
     }
+
 }
