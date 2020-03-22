@@ -8,8 +8,8 @@ layout: default
   scalability and data plumbing.</p>
   <p>I work as a Lead Software Engineer at <a href="https://www.newrelic.com/">New Relic</a>.
      Prior to that I built an <a href="https://srvaroa.github.io/paas/infrastructure/platform/kubernetes/cloud/2020/01/02/talk-how-to-build-a-paas-for-1500-engineers.html">internal
-       PaaS for 1500 engineers</a>.  Distributed virtual networks at
-     <a href="https://midokura.com">Midokura</a>,
+       PaaS for 1500 engineers</a> at <a href="https://adevinta.com">Adevinta</a>,
+     distributed virtual networks at <a href="https://midokura.com">Midokura</a>,
      data infrastructure for telcos at <a href="http://zhilabs.com/">Zhilabs</a>,
      and backend systems for some high volume internet sites
      (<a href="https://last.fm/">Last.fm</a>,
@@ -32,16 +32,25 @@ layout: default
        href="https://github.com/midonet/midonet/commits?author=srvaroa">the
        Midonet git log</a>.
   </p>
-  <p>These are some things I wrote:</p>
 
-  <h1 class="page-heading">Content (<a href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS</a>)</h1>
+  <h2>Writings - <a href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS</a></h2>
+
+  <h3>Kubernetes, PaaS.</h3>
 
   <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <h2><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
-      </li>
-    {% endfor %}
+    <li><a href="{{ site.baseUrl }}/paas/infrastructure/platform/kubernetes/cloud/2020/01/02/talk-how-to-build-a-paas-for-1500-engineers.html">Talk-write up: How to build a PaaS for 1500 engineers</a></li>
+    <li><a href="{{ site.baseUrl }}/kubernetes/eureka/paas/microservices/loadbalancing/2020/02/12/eureka-kubernetes.html">Migrating an Eureka-based microservice fleet to Kubernetes</a></li>
+    <li><a href="{{ site.baseUrl }}/kubernetes/migration/latency/dns/java/aws/microservices/2019/10/22/kubernetes-added-a-0-to-my-latency.html">"Kubernetes made my latency 10x higher"</a></li>
+  </ul>
+
+  <h3>JVM</h3>
+
+  <ul class="post-list">
+    <li><a href="{{ site.baseUrl }}/jvm/kubernetes/memory/docker/oomkiller/2019/05/29/k8s-and-java.html">Sizing Kubernetes pods for JVM apps without fearing the JVM killer</a></li>
+    <li><a href="{{ site.baseUrl }}/jvm/java/openjdk/biased-locking/2017/01/30/hashCode.html">How does the default hashCode() work (and how it impacts biased locking)</a></li>
+    <li><a href="{{ site.baseUrl }}/gc/jvm/java/garbage-collection/latency/gc-pause/2018/04/28/gc-analysis-by-example.html">GC forensics by example: multi second pauses and allocation pressure</a></li>
+    <li><a href="{{ site.baseUrl }}/jvm/java/garbage-collection/2016/07/25/jvm-tenuring-threshold.html">How does the JVM change tenuring thresholds, and when?</a></li>
+    <li><a href="{{ site.baseUrl }}/java/jvm/unsafe/2016/08/28/sun-misc-cleaner.html">Contention when releasing DirectByteBuffer</a></li>
   </ul>
 
 </div>
