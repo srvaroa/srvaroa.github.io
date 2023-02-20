@@ -13,7 +13,6 @@ future: false
 
 # Build settings
 markdown: kramdown
-google_analytics: UA-83414155-1
 
 # Plugins
 plugins:
