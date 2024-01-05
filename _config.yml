@@ -6,7 +6,7 @@ description: >
   background in distributed systems, scalability and data plumbing. This
   site collects some of the stuff I make, mostly about and around
   software engineering.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://varoa.net"
 twitter_username: srvaroa
 github_username: srvaroa

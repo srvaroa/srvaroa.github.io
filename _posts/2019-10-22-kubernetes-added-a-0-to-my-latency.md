@@ -148,7 +148,7 @@ mention later.)  But something in the way our service handled each
 request seemed strange.  Below is a screenshot of the capture, showing
 the reception of a request until the start of the response.
 
-<img src="/assets/tcpdump_dns.jpg" align="center"/>
+<img src="/assets/tcpdump_dns.jpg" align="center" width="100%"/>
 
 The packet numbers are shown in the first column.  I coloured the
 different TCP streams for clarity.  
