@@ -2,11 +2,12 @@
 title: Galo Navarro
 email: anglorvaroa@gmail.com
 description: >
-  This is my personal site.  I'm a Principal Software Engineer at Adevinta,
-  I work on developer tools and cloud infrastructure and have a background
-  on backend/systems engineering, distributed systems, continuous delivery.
+  Hi I'm Galo. This is my personal site. I'm a software engineer with a
+  background in distributed systems, scalability and data plumbing. This
+  site collects some of the stuff I make, mostly about and around
+  software engineering.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://srvaroa.github.io" # the base hostname & protocol for your site
+url: "https://varoa.net"
 twitter_username: srvaroa
 github_username: srvaroa
 future: false
