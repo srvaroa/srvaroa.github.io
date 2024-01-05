@@ -52,7 +52,7 @@ looking into:
 
 <p align="center">
     <a href="/assets/gcviewer_sample_1.png">
-	<img src="/assets/gcviewer_sample_1.png">
+	<img width="100%" src="/assets/gcviewer_sample_1.png">
     </a>
 </p>
 

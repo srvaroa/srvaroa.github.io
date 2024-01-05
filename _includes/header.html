@@ -1,34 +1,9 @@
 <header class="site-header">
-
-  <div class="wrapper">
-
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-
-    <nav class="site-nav">
-
-      <div class="trigger">
-        <ul>
-          <li><a href="https://hachyderm.io/@srvaroa" title="Mastodon">
-              <span class="icon icon--mastodon">{% include icon-mastodon.svg %}</span></a>
-          </li>
-          <li><a href="https://twitter.com/srvaroa" title="Twitter">
-              <span class="icon icon--twitter">{% include icon-twitter.svg %}</span></a>
-          </li>
-          <li><a href="https://github.com/srvaroa" title="GitHub">
-              <span class="icon icon--github">{% include icon-github.svg %}</span></a>
-          </li>
-          <li><a href="mailto:anglorvaroa@gmail.com" title="Email">
-              <span class="icon icon--email">{% include icon-email.svg %}</span></a>
-          </li>
-          {% for my_page in site.pages %}
-            {% if my_page.title %}
-              <li><a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>
-            {% endif %}
-          {% endfor %}
-        </ul>
-      </div>
-    </nav>
-
-  </div>
-
+  <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
 </header>

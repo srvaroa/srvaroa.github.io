@@ -2,75 +2,79 @@
 layout: default
 ---
 
-<div class="home">
+<p>Hello!</p>
 
-  <p>Hello.</p>
+<p>I am a software engineer with a background on distributed systems and data
+plumbing. I'm more broadly interested how complex systems work. Right now I
+work as Principal Engineer at Midokura building systems to manage fleets of
+intelligent devices as part of Sony's Edge AI sensing platform, AITRIOS.
+The <a href="/about">about section</a> contains more details about my professional work.  </p>
 
-  <p>I'm a software engineer with a background in distributed systems,
-  scalability and data plumbing.</p>
+<p>
+  My focus is mainly on building, but I believe that putting ideas into writing makes
+  better thinking. Below you can find some of the content I've produced over time, 
+  generally related to my work. To keep up with updates you can use the
+  <a href="{{ " /feed.xml" | prepend: site.baseurl }}">RSS feed</a>, at least until I
+  set up one of those email lists that cool kids have nowadays. I'm in
+  <a href="https://twitter.com/srvaroa">Twitter</a> &
+  <a href="https://hachyderm.io/@srvaroa">Mastodon</a>,
+  and always happy to get an
+  <a href="mailto:anglorvaroa@gmail.com">email</a>.
+</p>
 
-  <p> I work as a Principal Software Engineer at <a
-    href="https://www.midokura.com/">Midokura</a>, where we build
-    systems to manage fleets of intelligent sensing devices capable of
-    running AI models for Sony's Edge AI sensing platform, <a
-    href="https://www.aitrios.sony-semicon.com/en">AITRIOS</a>.  </p>
-  
-  <p> These are some projects I worked on in the past: 
-    <ul>
-      <li> At <a
-      href="https://newrelic.com/">New Relic</a>, leading the
-      the teams that manage the internal platform to process raw real-time
-      telemetry, infers what type of entity reports them (hosts,
-      devices, applications..) and provides type-specific semantics
-      to create New Relic's observability
-      experience.</li>
-  
-      <li> <a href="https://adevinta.com">Adevinta</a>
-      leading the development of an <a
-      href="https://srvaroa.github.io/paas/infrastructure/platform/kubernetes/cloud/2020/01/02/talk-how-to-build-a-paas-for-1500-engineers.html">internal
-      PaaS for 1500 engineers</a> that supported the migration of multiple large 
-      online marketplaces to the cloud.</li>
-                                                                                                 
-      <li>Distributed virtual networks at <a
-      href="https://midokura.com">Midokura</a>.</li>
-      
-      <li>Data infrastructure for telcos at <a href="http://zhilabs.com/">Zhilabs</a>
-        
-      <li>Backend systems for some high volume internet sites (<a
-      href="https://last.fm/">Last.fm</a>, <a
-      href="https://tuenti.com/">Tuenti</a>.)</li>
-    </ul>
-  </p>
-    
-  <p>For more details you can find me in
-    <a
-    href="https://github.com/srvaroa">GitHub</a>,
-    <a
-    href="https://www.linkedin.com/in/galonavarro">LinkedIn</a>.
-    <a
-    href="https://twitter.com/srvaroa">Twitter</a>,
-    <a
-    href="https://hachyderm.io/@srvaroa">Mastodon</a>.
-  </p>
+<hr />
 
-  <h2>Writings (<a href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS</a>)</h2>
-  
-  <h3>Kubernetes, PaaS.</h3>
+<h2>Writing</h2>
 
-  <ul class="post-list">
-    <li><a href="{{ site.baseUrl }}/paas/infrastructure/platform/kubernetes/cloud/2020/01/02/talk-how-to-build-a-paas-for-1500-engineers.html">Talk-write up: How to build a PaaS for 1500 engineers</a></li>
-    <li><a href="{{ site.baseUrl }}/kubernetes/eureka/paas/microservices/loadbalancing/2020/02/12/eureka-kubernetes.html">Migrating an Eureka-based microservice fleet to Kubernetes</a></li>
-    <li><a href="{{ site.baseUrl }}/kubernetes/migration/latency/dns/java/aws/microservices/2019/10/22/kubernetes-added-a-0-to-my-latency.html">"Kubernetes made my latency 10x higher"</a></li>
-  </ul>
+<p>
+During my tenure at Adevinta I led development of an internal
+platform to support all the online marketplaces in the group
+(including some of the biggest in Europe and South America). I
+produced some content about strategic and technical challenges (yes,
+before Platform Engineering became a short-lived hype :)
+</p>
 
-  <h3>JVM</h3>
+<ul class="post-list">
+  <li><a href="{{ site.baseUrl }}/paas/infrastructure/platform/kubernetes/cloud/2020/01/02/talk-how-to-build-a-paas-for-1500-engineers.html">
+    How to build a PaaS for 1500 engineers</a>. An overview of the strategic principles that we used to
+    create Adevinta's internal platform. This was done before Platform Engineering became a thing, and
+    remains relevant for any team working on technical infrastructure.
+  </li>
+  <li><a href="{{ site.baseUrl }}/kubernetes/migration/latency/dns/java/aws/microservices/2019/10/22/kubernetes-added-a-0-to-my-latency.html">
+    "Kubernetes made my latency 10x higher"</a>. This was the knee-jerk reaction of some product engineers when
+    we ran into performance problems while migrating their services to Kubernetes. This post shows the
+    actual cause was usually a result of blending complex systems together in ways we had not tried before.
+  </li>
+  <li><a href="{{ site.baseUrl }}/kubernetes/eureka/paas/microservices/loadbalancing/2020/02/12/eureka-kubernetes.html">
+    Migrating an Eureka-based microservice fleet to Kubernetes</a>. Technical deep-dive explaining
+    how we achieved a smooth migration of the legacy service discovery and client-side load balancing to
+    work with our new Kubernetes-based platform.  
+  </li>
+</ul>
 
-  <ul class="post-list">
-    <li><a href="{{ site.baseUrl }}/jvm/kubernetes/memory/docker/oomkiller/2019/05/29/k8s-and-java.html">Sizing Kubernetes pods for JVM apps without fearing the JVM killer</a></li>
-    <li><a href="{{ site.baseUrl }}/jvm/java/openjdk/biased-locking/2017/01/30/hashCode.html">How does the default hashCode() work (and how it impacts biased locking)</a></li>
-    <li><a href="{{ site.baseUrl }}/gc/jvm/java/garbage-collection/latency/gc-pause/2018/04/28/gc-analysis-by-example.html">GC forensics by example: multi second pauses and allocation pressure</a></li>
-    <li><a href="{{ site.baseUrl }}/jvm/java/garbage-collection/2016/07/25/jvm-tenuring-threshold.html">How does the JVM change tenuring thresholds, and when?</a></li>
-    <li><a href="{{ site.baseUrl }}/java/jvm/unsafe/2016/08/28/sun-misc-cleaner.html">Contention when releasing DirectByteBuffer</a></li>
-  </ul>
+<p>Most of my career I've worked with the JVM, sometimes I write
+about things that catch my attention:</p>
 
-</div>
+<ul class="post-list">
+  <li><a href="{{ site.baseUrl }}/jvm/java/openjdk/biased-locking/2017/01/30/hashCode.html">
+    How does the default hashCode() work (and how it impacts biased locking)</a>. I was curious about
+    how the default `hashCode()` was implemented in Java and ended up in a deep, although fascinating
+    rabbit hole around the JVM's biased locking implementation.
+  </li>
+  <li><a href="{{ site.baseUrl }}/jvm/kubernetes/memory/docker/oomkiller/2019/05/29/k8s-and-java.html">
+    Sizing Kubernetes pods for JVM apps without fearing the JVM killer</a>. A common issue
+    during the migration on JVM services to Kubernetes from the days at Adevinta.
+  </li>
+  <li><a href="{{ site.baseUrl }}/gc/jvm/java/garbage-collection/latency/gc-pause/2018/04/28/gc-analysis-by-example.html">
+    GC forensics by example: multi second pauses and allocation pressure</a>. A practical
+    example of how to analyze a Hotspot GC log exhibiting large GC pauses.
+  </li>
+  <li><a href="{{ site.baseUrl }}/jvm/java/garbage-collection/2016/07/25/jvm-tenuring-threshold.html">
+    How does the JVM change tenuring thresholds, and when?</a>. Self explanatory, I guess?
+  </li>
+  <li><a href="{{ site.baseUrl }}/java/jvm/unsafe/2016/08/28/sun-misc-cleaner.html">
+    Contention when releasing DirectByteBuffer</a>. I found a few threads of a dying application
+    locked on `sun.misc.Cleaner`. I wanted to know why.
+  </li>
+</ul>
+
