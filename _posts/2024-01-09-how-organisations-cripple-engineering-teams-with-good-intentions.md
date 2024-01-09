@@ -285,23 +285,27 @@ that engineering is a different one.
 
 You have to convey to engineers around you the importance of
 understanding the Why of your work. The value of growing a diverse
-toolbox of skills.  Be a role model in this. Help them engage with the
+toolbox of skills. Be a role model in this. Help them engage with the
 business. Push them to get out of the code sometime, and walk the
 organisation learning what’s beyond the brick laying. To get into the
 project manager or the UX designer’s shoes, to go help customers ensure
 that disaster of an API we designed behind our noise-cancelling
 headphones. To do the project management that’s falling through the
-cracks, and learn from the experience. This is all essential. But it is
-equally essential that you help engineers keep their focus, attention,
-raw, solid, uninterrupted quality time, on core engineering activities.
-Ensure that their jars fill with big stones first. Sometimes you do this
-by pushing back when the organisation wants to use some of the
-engineer’s time budget into for purposes that seem good, well motivated
-and rational, but can have unintentional side effects on the engineers’
-ability to write, review, operate, deliver and maintain the engineering
-dimension of high quality software up to high standards. And this
-doesn’t mean that engineering is the only dimension that matters. Nor
-that it’s the most important one. Nor should you think of yourself and
-your team as sacred cows among lesser professionals. It just means that
-you’re engineers, and you have a job to do.
+cracks, and learn from the experience.
+
+This is all essential. But it is equally essential that you help
+engineers keep their focus, attention, raw, solid, uninterrupted quality
+time, on core engineering activities. Ensure that their jars fill with
+big stones first. Sometimes you do this by pushing back when the
+organisation wants to use some of the engineer’s time budget into for
+purposes that seem good, well motivated and rational, but can have
+unintentional side effects on the engineers’ ability to write, review,
+operate, deliver and maintain the engineering dimension of high quality
+software up to high standards.
+
+This doesn’t mean that engineering is the only dimension that matters.
+Nor that it’s the most important one.  Nor should you think of yourself
+and your team as sacred cows among lesser professionals.
+
+It just means that you’re engineers, and you have a job to do.
 
