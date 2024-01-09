@@ -5,18 +5,30 @@ layout: default
 
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
     {{ content }}
   </div>
 
+  <p class="post-meta">
+  <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time></p>
 </article>
 
 <p style='font-size:90%; font-style:italic; text-align:center; margin-top:50px;'>
-To get notifications for new posts, subscribe to the
-<a href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS feed</a>
-or follow me on <a href="https://twitter.com/srvaroa">Twitter</a>.
-Here is the log of <a href="/">older posts</a>.
+  To get notifications for new posts, subscribe to
+  <a href="https://varoa.ghost.io/">my mailing list</a>,
+  the
+  <a href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS feed</a>
+  or follow me on
+  <a href="https://twitter.com/srvaroa">Twitter</a> /
+  <a rel="me" href="https://mastodon.social/@srvaroa@hachyderm.io">Mastodon</a>.
 </p>
+
+<p>
+  <div class="mailing-list">
+    <script src="https://cdn.jsdelivr.net/ghost/signup-form@~0.1/umd/signup-form.min.js" data-button-color="#4595DB" data-button-text-color="#FFFFFF" data-site="https://varoa.ghost.io/" async>
+    </script>
+  </div>
+</p>
+

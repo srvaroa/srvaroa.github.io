@@ -11,9 +11,48 @@ intelligent devices as part of Sony's Edge AI sensing platform, AITRIOS.
 The <a href="/about">about section</a> contains more details about my professional work.  </p>
 
 <p>
-  My focus is mainly on building, but I believe that putting ideas into writing makes
-  better thinking. Below you can find some of the content I've produced over time, 
-  generally related to whatever is keeping me busy at the time.
+  My focus is mainly on building, but I believe that putting ideas into
+  writing makes better thinking. Below you can find a selection of my
+  writings, generally related to whatever is keeping me busy at the
+  time, and my own opinion.
+</p>
+
+<p>
+  <ul class="post-list">
+    <li>
+      <a href="{{ site.baseUrl
+        }}/2024/01/09/how-organisations-cripple-engineering-teams-with-good-intentions.html">Hhow
+        organisations cripple engineering teams with good intentions</a>.
+        This is about how organizations sometimes shoot themselves in the
+        foot while trying to improve engineering teams with other valuable
+        skills.
+    </li>
+    <li>
+      <a href="{{ site.baseUrl
+        }}/paas/infrastructure/platform/kubernetes/cloud/2020/01/02/talk-how-to-build-a-paas-for-1500-engineers.html">How to build a PaaS for 1500 engineers</a>.
+      A deep dive into the strategic principles we followed at Adevinta to
+      build an internal platform to support 1500 engineers across some of
+      the biggest online marketplaces in Europe and South America).
+      Written before Platform Engineering became a hype, and I think still
+      relevant to teams working in technical, infrastructure.
+    </li>
+    <li><a href="{{ site.baseUrl }}/jvm/java/openjdk/biased-locking/2017/01/30/hashCode.html">
+      How does the default hashCode() work (and how it impacts biased locking)</a>.
+      I was curious about how the default `hashCode()` was implemented in
+      Java and ended up in a deep, although fascinating rabbit hole around
+      the JVM's biased locking implementation.
+    </li>
+    <li><a href="{{ site.baseUrl }}/kubernetes/migration/latency/dns/java/aws/microservices/2019/10/22/kubernetes-added-a-0-to-my-latency.html">"Kubernetes made my latency 10x higher"</a>.
+      Blaming Kubernetes was the knee-jerk reaction of some product
+      engineers when we ran into performance problems while migrating
+      their services into our PaaS. This post shows how the actual cause
+      was usually a result of blending complex systems together for the
+      first time.
+    </li>
+  </ul>
+</p>
+
+<p>
   To keep up with updates you can subscribe to <a
     href="https://varoa.ghost.io/">my mailing list</a> (expect low
   frequency and long form content) or use the <a href="{{ " /feed.xml" |
@@ -23,64 +62,21 @@ The <a href="/about">about section</a> contains more details about my profession
 get an <a href="mailto:anglorvaroa@gmail.com">email</a>.
 </p>
 
-<div class="mailing-list">
-  <script src="https://cdn.jsdelivr.net/ghost/signup-form@~0.1/umd/signup-form.min.js" data-button-color="#4595DB" data-button-text-color="#FFFFFF" data-site="https://varoa.ghost.io/" async>
-  </script>
-</div>
-
-<h2>On buiding a developer platform</h2>
-
 <p>
-During my tenure at Adevinta I led development of an internal
-platform to support all the online marketplaces in the group
-(including some of the biggest in Europe and South America). I
-produced some content about strategic and technical challenges (yes,
-before Platform Engineering became a short-lived hype :)
+  <div class="mailing-list">
+    <script src="https://cdn.jsdelivr.net/ghost/signup-form@~0.1/umd/signup-form.min.js" data-button-color="#4595DB" data-button-text-color="#FFFFFF" data-site="https://varoa.ghost.io/" async>
+    </script>
+  </div>
 </p>
 
-<ul class="post-list">
-  <li><a href="{{ site.baseUrl }}/paas/infrastructure/platform/kubernetes/cloud/2020/01/02/talk-how-to-build-a-paas-for-1500-engineers.html">
-    How to build a PaaS for 1500 engineers</a>. An overview of the strategic principles that we used to
-    create Adevinta's internal platform. This was done before Platform Engineering became a thing, and
-    remains relevant for any team working on technical infrastructure.
-  </li>
-  <li><a href="{{ site.baseUrl }}/kubernetes/migration/latency/dns/java/aws/microservices/2019/10/22/kubernetes-added-a-0-to-my-latency.html">
-    "Kubernetes made my latency 10x higher"</a>. This was the knee-jerk reaction of some product engineers when
-    we ran into performance problems while migrating their services to Kubernetes. This post shows the
-    actual cause was usually a result of blending complex systems together in ways we had not tried before.
-  </li>
-  <li><a href="{{ site.baseUrl }}/kubernetes/eureka/paas/microservices/loadbalancing/2020/02/12/eureka-kubernetes.html">
-    Migrating an Eureka-based microservice fleet to Kubernetes</a>. Technical deep-dive explaining
-    how we achieved a smooth migration of the legacy service discovery and client-side load balancing to
-    work with our new Kubernetes-based platform.  
-  </li>
-</ul>
+<h2>Archive</h2>
 
-<h2>On the JVM</h2>
-
-<p>Most of my career I've worked with the JVM, sometimes I write
-about things that catch my attention:</p>
-
-<ul class="post-list">
-  <li><a href="{{ site.baseUrl }}/jvm/java/openjdk/biased-locking/2017/01/30/hashCode.html">
-    How does the default hashCode() work (and how it impacts biased locking)</a>. I was curious about
-    how the default `hashCode()` was implemented in Java and ended up in a deep, although fascinating
-    rabbit hole around the JVM's biased locking implementation.
-  </li>
-  <li><a href="{{ site.baseUrl }}/jvm/kubernetes/memory/docker/oomkiller/2019/05/29/k8s-and-java.html">
-    Sizing Kubernetes pods for JVM apps without fearing the JVM killer</a>. A common issue
-    during the migration on JVM services to Kubernetes from the days at Adevinta.
-  </li>
-  <li><a href="{{ site.baseUrl }}/gc/jvm/java/garbage-collection/latency/gc-pause/2018/04/28/gc-analysis-by-example.html">
-    GC forensics by example: multi second pauses and allocation pressure</a>. A practical
-    example of how to analyze a Hotspot GC log exhibiting large GC pauses.
-  </li>
-  <li><a href="{{ site.baseUrl }}/jvm/java/garbage-collection/2016/07/25/jvm-tenuring-threshold.html">
-    How does the JVM change tenuring thresholds, and when?</a>. Self explanatory, I guess?
-  </li>
-  <li><a href="{{ site.baseUrl }}/java/jvm/unsafe/2016/08/28/sun-misc-cleaner.html">
-    Contention when releasing DirectByteBuffer</a>. I found a few threads of a dying application
-    locked on `sun.misc.Cleaner`. I wanted to know why.
-  </li>
-</ul>
-
+<p>
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul> 
+</p>
