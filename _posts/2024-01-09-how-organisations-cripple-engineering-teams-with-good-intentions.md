@@ -38,43 +38,49 @@ often backfire.
 Let me present a simplified version of a pattern I’ve witnessed a few
 times.
 
-Leadership learns from product manager feedback that technical decisions
-are not well aligned with user needs. They diagnose (rightly) that
-engineering is not close enough to the user. Since we have an interest
-in augmenting engineers with product management skills, it seems like a
-good idea to introduce a change in the organisation’s processes so that
-engineers spend more quality time with PMs and customers when defining
-epics / stories. It's hard to argue with this! It makes total sense.
-Some time later UX designers raise that the software is disconnected
-from the actual user experience. After a similar analysis, it seems like
-a good idea to modify our processes to allow engineers to spend more
-quality time with UX designers when designing features. Again, it's hard
-to argue with this! It makes total sense.  Some time later leadership
-notices that project management work is falling through the
-organisational cracks which harms delivery, quality, etc. They realise
-that this is a good opportunity to help engineers develop their project
-management skills, so we incorporate some project management
-responsibilities into engineering teams. Again, this makes sense!  Then
-leadership meets with Customer Support.  Then, with Sales.
+* Leadership learns from product manager feedback that technical
+  decisions are not well aligned with user needs. They diagnose
+  (rightly) that engineering is not close enough to the user. Since we
+  have an interest in augmenting engineers with product management
+  skills, it seems like a good idea to introduce a change in the
+  organisation’s processes so that engineers spend more quality time
+  with PMs and customers when defining epics / stories. It's hard to
+  argue with this! It makes total sense.
+* Some time later UX designers raise that the software is disconnected
+  from the actual user experience. After a similar analysis, it seems
+  like a good idea to modify our processes to allow engineers to spend
+  more quality time with UX designers when designing features. Again,
+  it's hard to argue with this! It makes total sense.
+* Some time later leadership notices that project management work is
+  falling through the organisational cracks which harms delivery,
+  quality, etc. They realise that this is a good opportunity to help
+  engineers develop their project management skills, so we incorporate
+  some project management responsibilities into engineering teams.
+  Again, this makes sense!
+* Then leadership meets with Customer Support.
+* Then, with Sales.
 
 You see where I'm going, right?
 
 Here is a simplified version of another common pattern.
 
-Product stakeholders are defining product priorities for the quarter. We
-want an inclusive work environment where any engineer can contribute
-ideas for the product. This all makes sense, so we ask the managers to
-work with their teams in proposing ideas for initiatives and projects.
-HR are looking to improve social media presence and attract leads to the
-hiring pipeline. Having Engineer-generated content in the corporate blog
-would be powerful! It also helps engineers build writing skills, get a
-public presence. Let’s ask engineers to write!  Hiring processes are
-about to be redefined. We dig inclusiveness. We want engineers engaged
-and involved. The hiring managers and HR ask teams to get the
-engineering hive mind to work and crunch some proposals.  Customer
-support needs new standards, some consolidation of processes and tools.
-Engineer feedback and engagement is valuable! We ask each team’s manager
-to collect feedback and ideas from their teams.  And so on.
+* Product stakeholders are defining product priorities for the quarter.
+  We want an inclusive work environment where any engineer can
+  contribute ideas for the product. This all makes sense, so we ask the
+  managers to work with their teams in proposing ideas for initiatives
+  and projects.
+* HR are looking to improve social media presence and attract leads to
+  the hiring pipeline. Having Engineer-generated content in the
+  corporate blog would be powerful! It also helps engineers build
+  writing skills, get a public presence. Let’s ask engineers to write!
+* Hiring processes are about to be redefined. We dig inclusiveness. We
+  want engineers engaged and involved. The hiring managers and HR ask
+  teams to get the engineering hive mind to work and crunch some
+  proposals.
+* Customer support needs new standards, some consolidation of processes
+  and tools.  Engineer feedback and engagement is valuable! We ask each
+  team’s manager to collect feedback and ideas from their teams.
+* And so on.
 
 <h2>A sum of individual good ideas doesn’t guarantee a good outcome</h2>
 
@@ -182,7 +188,9 @@ if we now add some time working on requirement gathering? And on
     learning! Inclusiveness! But Ars longa, vita brevis. Engineers spend
     less time in engineering.
 
-Would you, product manager, people manager, UX designer, <insert_your_discipline_here>, be able to do your job properly if you had to spend 5% of your time in each of 10 other disciplines? If your
+Would you, product manager, people manager, UX designer,
+`$insert_your_discipline_here`, be able to do your job properly if you
+had to spend 5% of your time in each of 10 other disciplines? If your
 core activity was loaded with a crust of unnecessary ritual? Of course
 not!
 
