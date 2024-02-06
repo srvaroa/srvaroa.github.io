@@ -13,6 +13,11 @@ body {
   padding: 20px;
 }
 
+::selection {
+  color: black;
+  background-color: yellow;
+}
+
 a {
   text-decoration: none;
   color: #4595DB;
@@ -88,6 +93,17 @@ a {
     text-align: right;
   }
 
+}
+
+blockquote {
+  font-style: italic;
+}
+
+.image-box {
+  text-align: center;
+  img {
+    max-width: 80%;
+  }
 }
 
 .box {
