@@ -78,8 +78,8 @@ accounts following a fairly standard architecture. Here is a (very)
 simplified view of one account:
 
 <div class="image-box">
-    <a href="{{site.baseurl}}/assets/eureka-to-k8s/eureka_architecture.png" target="_blank">
-      <img src="{{site.baseurl}}/assets/eureka-to-k8s/eureka_architecture.png" width="100%" />
+    <a href="{{site.baseUrl}}/assets/eureka-to-k8s/eureka_architecture.png" target="_blank">
+      <img src="{{site.baseUrl}}/assets/eureka-to-k8s/eureka_architecture.png" width="100%" />
     </a>
     <span class="image_foot">Eureka architecture (<a href="https://github.com/Netflix/eureka/wiki/Eureka-at-a-glance">source</a>)</span>
 </div>
@@ -154,8 +154,8 @@ that defines how to reach those `Pod`s.  This is how Kubernetes wires
 things up:
 
 <div class="image-box">
-    <a href="{{site.baseurl}}/assets/eureka-to-k8s/services_in_k8s.png" target="_blank">
-      <img src="{{site.baseurl}}/assets/eureka-to-k8s/services_in_k8s.png" width="80%" />
+    <a href="{{site.baseUrl}}/assets/eureka-to-k8s/services_in_k8s.png" target="_blank">
+      <img src="{{site.baseUrl}}/assets/eureka-to-k8s/services_in_k8s.png" width="80%" />
     </a>
     <span class="image_foot">How we deploy a microservice in Kubernetes</span>
 </div>
@@ -178,8 +178,8 @@ nodes. Not to any of the resources in the **overlay network** like
 Let's see the diagram updated with a VPC peering between both AWS accounts.
 
 <div class="image-box">
-    <a href="{{site.baseurl}}/assets/eureka-to-k8s/legacy_and_new.png" target="_blank">
-      <img src="{{site.baseurl}}/assets/eureka-to-k8s/legacy_and_new.png" width="100%" />
+    <a href="{{site.baseUrl}}/assets/eureka-to-k8s/legacy_and_new.png" target="_blank">
+      <img src="{{site.baseUrl}}/assets/eureka-to-k8s/legacy_and_new.png" width="100%" />
     </a>
     <span class="image_foot">Our starting point: legacy and new infrastructures</span>
 </div>
@@ -262,8 +262,8 @@ a `Service`.  Here is the diagram updated after adding two `Ingress`
 objects for `Alice` and `Carol`.
 
 <div class="image-box">
-    <a href="{{site.baseurl}}/assets/eureka-to-k8s/with_ingress.png" width="100%">
-    <img src="{{site.baseurl}}/assets/eureka-to-k8s/with_ingress.png" width="100%" />
+    <a href="{{site.baseUrl}}/assets/eureka-to-k8s/with_ingress.png" width="100%">
+    <img src="{{site.baseUrl}}/assets/eureka-to-k8s/with_ingress.png" width="100%" />
     </a>
     <span class="image_foot">Adding the Ingress</span>
 </div>
@@ -330,8 +330,8 @@ each microservice to entries in Eureka.  This gives us some benefits:
   seamlessly.
 
 <div class="image-box">
-  <a href="{{site.baseurl}}/assets/eureka-to-k8s/full_picture.png" width="100%">
-  <img src="{{site.baseurl}}/assets/eureka-to-k8s/full_picture.png" width="100%" />
+  <a href="{{site.baseUrl}}/assets/eureka-to-k8s/full_picture.png" width="100%">
+  <img src="{{site.baseUrl}}/assets/eureka-to-k8s/full_picture.png" width="100%" />
   </a>
   <span class="image_foot">The full picture</span>
 </div>
@@ -411,8 +411,8 @@ Eurek8s will continue to enable the full migration of all workloads.  By
 the time we're done, both environments will look like this:
 
 <div class="image-box">
-  <a href="{{site.baseurl}}/assets/eureka-to-k8s/all_migrated.png">
-  <img src="{{site.baseurl}}/assets/eureka-to-k8s/all_migrated.png" width="100%" />
+  <a href="{{site.baseUrl}}/assets/eureka-to-k8s/all_migrated.png">
+  <img src="{{site.baseUrl}}/assets/eureka-to-k8s/all_migrated.png" width="100%" />
   </a>
   <span class="image_foot">All microservices are migrated to Kubernetes</span>
 </div>
@@ -463,8 +463,8 @@ Finally, I'm adding an overview of how Eurek8s is implemented.  Here is
 a high level diagram:
 
 <div class="image-box">
-  <a href="{{site.baseurl}}/assets/eureka-to-k8s/eurek8s.jpg">
-  <img src="{{site.baseurl}}/assets/eureka-to-k8s/eurek8s.jpg" width="100%" />
+  <a href="{{site.baseUrl}}/assets/eureka-to-k8s/eurek8s.jpg">
+  <img src="{{site.baseUrl}}/assets/eureka-to-k8s/eurek8s.jpg" width="100%" />
   </a>
   <span class="image_foot">Eurek8s</span>
 </div>
