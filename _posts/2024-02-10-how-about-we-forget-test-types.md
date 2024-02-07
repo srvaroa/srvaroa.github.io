@@ -219,18 +219,20 @@ dominate the discussion. Bringing back the focus to the domain of
 systems design rather than abstract classification games, helps reason
 about problems around testing much more productively.
 
-As I mentioned above this is meant to be the introduction to a short
-series of posts. In the next issues I will cover:
+As I mentioned above this is meant to be an introduction to a short
+series of posts about testing software. The next posts will be practical
+applications of a systems perspective:
 
-* Describe a testing pipeline involving multiple teams that suffers many
-  of the pathologies described above, based on real examples that I have
-  found in the wild. I will model these pipelines as an actual system
-  and show how this gives us a much better understanding of what we can
-  do to improve the situation.
+* Analyze a testing pipeline with multiple teams involved, which suffers
+  many of the pathologies described above. It will be based on real
+  examples that I have found in the wild. I will model these pipelines
+  as an actual system and show how this gives us a much better
+  understanding of what we can do to improve the situation.
 * Show concrete interventions that can be implemented, from the
   individual team level to the larger organisation, and use our model of
   the system to observe and measure the impact. I will also try to
   reference real work done in some of the companies I've worked with.
 
 I'm curious about how people design their own testing pipelines,
-challenges they find, and useful patterns so feel free to share them.
+challenges, and useful patterns, so anything you want to share will be
+very welcome.
