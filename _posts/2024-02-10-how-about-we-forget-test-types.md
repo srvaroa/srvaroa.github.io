@@ -224,13 +224,13 @@ series of posts. In the next issues I will cover:
 
 * Describe a testing pipeline involving multiple teams that suffers many
   of the pathologies described above, based on real examples that I have
-  found in companies I worked with. I will model these pipelines as an
-  actual system and show how this gives us a much better understanding
-  of what we can do to improve the situation.
+  found in the wild. I will model these pipelines as an actual system
+  and show how this gives us a much better understanding of what we can
+  do to improve the situation.
 * Show concrete interventions that can be implemented, from the
   individual team level to the larger organisation, and use our model of
-  the system to observe and measure the impact. Here I will make
-  reference to real work I have been involved with.
+  the system to observe and measure the impact. I will also try to
+  reference real work done in some of the companies I've worked with.
 
 I'm curious about how people design their own testing pipelines,
 challenges they find, and useful patterns so feel free to share them.
