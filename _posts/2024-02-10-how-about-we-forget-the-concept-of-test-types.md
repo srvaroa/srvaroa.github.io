@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How about we forget test types?"
+title:  "How about we forget the concept of test types?"
 date:   2024-02-06 23:00:00 +0200
 categories:
 ---
