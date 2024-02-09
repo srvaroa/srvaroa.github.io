@@ -209,7 +209,9 @@ we always care about: latency, throughput, error rate.
 * Error rate tells us what percentage of test executions fail to do
   their job. Note that this is not the same as failed tests (that is a
   successful execution!). Errors would be false positives (regressions
-  that slip through our safety net), or false positives (often flakes).
+  that pass all tests and therefore slip through our safety net), or
+  false negatives (often flakes that fail tests even though there wasn't
+  an actual regression).
 
 These are not ground breaking ideas! They permeate the literature about
 software testing in one form or another (the reason for preferring unit
