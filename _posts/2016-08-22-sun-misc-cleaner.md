@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Contention on sun.misc.Cleaner"
+title:  "DirectBuffer creation / disposal has hidden contention on sun.misc.Cleaner"
 date:   2016-08-28 19:00:00 +0200
 categories: java jvm unsafe
 ---
