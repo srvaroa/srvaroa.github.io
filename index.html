@@ -2,67 +2,22 @@
 layout: default
 ---
 
-<p>Hello!</p>
-
-<p>I am a software engineer with a background on distributed systems and data
-plumbing. I'm more broadly interested how complex systems work. Right now I
-work as Principal Engineer at Midokura building systems to manage fleets of
-intelligent devices as part of Sony's Edge AI sensing platform, AITRIOS.
-The <a href="/about">about section</a> contains more details about my professional work.  </p>
-
-<p>
-  My focus is mainly on building, but I believe that putting ideas into
-  writing is the best way to sharpen your thinking process. The latest
-  published post was
-  {% for post in site.posts limit:1 %}
-    <a href="{{ post.url }}">{{ post.title }}</a>.
-  {% endfor %}
-  Below you can find a short selection of my favourites, and further
-  down the full archive.
+<p>Hello! I am a software engineer with a background on distributed
+systems and data plumbing. I currently work as Principal Software
+Engineer at <a href="https://midokura.com/">Midokura</a> building
+systems to manage fleets of intelligent devices within Sony's Edge AI
+sensing platform, AITRIOS. You can find more about me in the <a href="{{
+site.baseUrl }}/about">about section</a>, or just send me an <a
+href="mailto:anglorvaroa@gmail.com">email</a>.
 </p>
 
 <p>
-  <ul class="post-list">
-    <li>
-      <a href="{{ site.baseUrl }}/2024/01/09/how-organisations-cripple-engineering-teams-with-good-intentions.html">
-        How organisations cripple engineering teams with good intentions</a>.
-        This is about how organizations sometimes shoot themselves in the
-        foot while trying to improve engineering teams with other valuable
-        skills.
-    </li>
-    <li>
-      <a href="{{ site.baseUrl }}/paas/infrastructure/platform/kubernetes/cloud/2020/01/02/talk-how-to-build-a-paas-for-1500-engineers.html">
-      How to build a PaaS for 1500 engineers</a>.
-      A deep dive into the strategic principles we followed at Adevinta to
-      build an internal platform to support 1500 engineers across some of
-      the biggest online marketplaces in Europe and South America).
-      Written before Platform Engineering became a hype, and I think still
-      relevant to teams working in technical infrastructure.
-    </li>
-    <li><a href="{{ site.baseUrl }}/jvm/java/openjdk/biased-locking/2017/01/30/hashCode.html">
-      How does the default hashCode() work (and how it impacts biased locking)</a>.
-      I was curious about how the default `hashCode()` was implemented in
-      Java and ended up in a deep, although fascinating rabbit hole around
-      the JVM's biased locking implementation.
-    </li>
-    <li><a href="{{ site.baseUrl }}/kubernetes/migration/latency/dns/java/aws/microservices/2019/10/22/kubernetes-added-a-0-to-my-latency.html">"Kubernetes made my latency 10x higher"</a>.
-      Blaming Kubernetes was the knee-jerk reaction of some product
-      engineers when we ran into performance problems while migrating
-      their services into our PaaS. This post shows how the actual cause
-      was usually a result of blending complex systems together for the
-      first time.
-    </li>
-  </ul>
-</p>
-
-<p>
-  To keep up with updates you can subscribe to <a
-    href="https://newsletter.varoa.net/">my mailing list</a> (expect low
-  frequency and long form content) or use the <a href="{{ " /feed.xml" |
-    prepend: site.baseurl }}">RSS feed</a>.  I'm in <a
-    href="https://twitter.com/srvaroa">Twitter</a> &amp; <a rel="me"
-  href="https://hachyderm.io/@srvaroa">Mastodon</a>, and always happy to
-get an <a href="mailto:anglorvaroa@gmail.com">email</a>.
+  This page contains some of my writing on software engineering.
+  You can subscribe to updates on my <a
+    href="https://newsletter.varoa.net/">mailing list</a> (low frequency
+  and long form content) or the <a href="{{ " /feed.xml" | prepend: site.baseurl }}">RSS feed</a>.
+  I'm also in <a href="https://twitter.com/srvaroa">Twitter</a> &amp; <a rel="me"
+  href="https://hachyderm.io/@srvaroa">Mastodon</a>.
 </p>
 
 <p>
@@ -73,6 +28,43 @@ get an <a href="mailto:anglorvaroa@gmail.com">email</a>.
       data-site="https://newsletter.varoa.net/" async>
     </script>
   </div>
+</p>
+
+<p>
+  {% for post in site.posts limit:1 %}
+    The most recent piece is: <a href="{{ post.url }}">{{ post.title
+      }}</a>.
+  {% endfor %}
+</p>
+
+<h2>Highlights</h2>
+
+<p>
+  <ul class="post-list">
+    <li>
+      <a href="{{ site.baseUrl }}/2024/01/09/how-organisations-cripple-engineering-teams-with-good-intentions.html">
+        How organisations cripple engineering teams with good intentions</a>.
+        Engineers benefit from participating in product, sales, customer
+        support, etc. But let's not forget they have a job to do.
+    </li>
+    <li>
+      <a href="{{ site.baseUrl }}/paas/infrastructure/platform/kubernetes/cloud/2020/01/02/talk-how-to-build-a-paas-for-1500-engineers.html">
+      How to build a PaaS for 1500 engineers</a>.
+      Deep dive into the strategic principles we followed at Adevinta to
+      build an internal platform to support 1500 engineers across some of
+      the biggest online marketplaces in Europe and South America).
+    </li>
+    <li><a href="{{ site.baseUrl }}/jvm/java/openjdk/biased-locking/2017/01/30/hashCode.html">
+      How does the default hashCode() work (and how it impacts biased locking)</a>.
+      Wondering about the default `hashCode()` I ended up in a deep,
+      although fascinating rabbit hole around the JVM's biased locking
+      implementation.
+    </li>
+    <li><a href="{{ site.baseUrl }}/kubernetes/migration/latency/dns/java/aws/microservices/2019/10/22/kubernetes-added-a-0-to-my-latency.html">"Kubernetes made my latency 10x higher"</a>.
+      Blending complex systems often has surprising effects that are hard to
+      predict.
+    </li>
+  </ul>
 </p>
 
 <h2>Archive</h2>
