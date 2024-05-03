@@ -71,7 +71,7 @@ than it seems) entities had to migrate from one account to another. In
 all these cases you would be altering the identifier of many entities.
 
 It was painful but possible to work around many of these problems. But
-replacing GUIDs with semantic-free identifers was straight impossible.
+replacing GUIDs with semantic-free identifiers was straight impossible.
 By virtue of being present in thousands of URLs, NRQL queries, etc.
 GUIDs had become a public API that thousands of customers relied upon. A
 technical solution to replace identifiers would have been a major
@@ -97,9 +97,9 @@ nuisances](https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Spain#19
 They were alleviated with the adoption of [European
 standards](https://en.wikipedia.org/wiki/European_vehicle_registration_plate#European_Union).
 But partly. The root problem being that, like the [Domain Name
-System](https://en.wikipedia.org/wiki/Domain_Name_System) they tie
+System](https://en.wikipedia.org/wiki/Domain_Name_System)
 identifiers ("Galo's website") remain tied to administrative authorities
-(".net") who can change regulations, or even disappear.
+(".net"), which can change regulations, or even disappear.
 
 Nowadays I find most semantic identifiers in resource management. For
 some reason, when infrastructure teams define access rules to the
