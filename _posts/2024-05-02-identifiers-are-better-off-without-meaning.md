@@ -79,9 +79,10 @@ project, but doable. What wasn't possible was to run a find/replace
 across the private documentation and workflows of your entire customer
 base.
 
-If you look closely, the world is full of semantic identifiers. They are
-almost invariably a pain in the neck because they embed a specific model
-of the world. But models become obsolete faster than we'd like.
+If you look closely, the world is full of semantic identifiers.
+Sometimes they are hard to avoid, but almost always a pain in
+the neck. Because they embed a specific model of the world. But models
+become obsolete faster than we'd like.
 
 Addresses make notable examples. The "complex and idiosyncratic"
 [Japanese address
@@ -108,3 +109,10 @@ after the team that owns that service, something like
 "owner-team-access-list". Identifiers tied to the org chart don't like
 it when the service moves to another team, or owner-team is reorged
 away.
+
+--
+
+*Update: a commenter in Reddit pointed at another great example of
+problems of identifiers with semantics: the [German tank
+problem](https://en.m.wikipedia.org/wiki/German_tank_problem). Do send
+more!*
