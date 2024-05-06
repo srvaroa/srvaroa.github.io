@@ -116,3 +116,5 @@ away.
 problems of identifiers with semantics: the [German tank
 problem](https://en.m.wikipedia.org/wiki/German_tank_problem). Do send
 more!*
+
+*Update: Discussion in [HackerNews](https://news.ycombinator.com/item?id=40247373)*
