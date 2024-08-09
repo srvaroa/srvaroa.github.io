@@ -278,9 +278,9 @@ incompatible with keeping a “maker schedule” that is vital to healthy
 engineering. That involving the team in that well-intentioned
 brainstorming session to figure out the next quarter’s priorities can
 disable the same team from delivering the last quarter’s goals up to the
-right standards. That sometimes, if there is a hole in <some_discipline>
+right standards. That sometimes, if there is a hole in `<some_discipline>`
 work, maybe the solution is not to throw an engineer at the problem, but
-rather go and get the <discipline_domain_experts> to plug it. That you
+rather go and get the `<discipline_domain_experts>` to plug it. That you
 may be interested in old or new methodologies, tools of your trade, etc.
 but introducing them in engineering teams may inflate the amount of
 non-engineering time they have to deal with unnecessarily, to the
