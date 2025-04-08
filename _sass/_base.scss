@@ -129,7 +129,11 @@ blockquote {
   text-align: center;
 }
 
-h1, h2 {
+h1 {
+  font-size: 1.8em;
+}
+
+h2 {
   font-size: 1.5em;
 }
 
@@ -152,6 +156,30 @@ h3 {
   width: 50%;
   margin: 20px auto;
 }
+
+/* Image grid */
+
+.image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Exactly 2 columns of
+  equal width */
+  grid-gap: 10px;
+  width: 100%;
+}
+
+.image-grid img {
+  width: 100%;
+  object-fit: cover; /* Maintains aspect ratio */
+  display: block;
+}
+
+/* Optional: For mobile devices, switch to 1 column */
+@media (max-width: 480px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 @media (max-width: 768px) {
   body {
@@ -182,3 +210,5 @@ h3 {
     font-size: 0.8em;
   }
 }
+
+

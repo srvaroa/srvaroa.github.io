@@ -178,7 +178,7 @@ to hold a rational conversation, among themselves and with stakeholders.
 
 <div class="image-box">
   <img
-    src="{{site.baseurl}}/assets/test_types/wooden_shapes.png"
+    src="{{site.url}}{{site.baseurl}}/assets/test_types/wooden_shapes.png"
     alt="A shape sorting toy made out of wood, with coloured pieces"/>
 </div>
 
