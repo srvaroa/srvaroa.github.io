@@ -196,7 +196,7 @@ ecosystem:
   removing them completely. Shift relevant test suites to canary / smoke
   tests. Add synthetic load directly on production. Get code where the
   real action is, and learn to survive there.
-- To measure and track quality prefer metrics that look at business
+- To measure and track quality, prefer metrics that look at business
   outcomes and user experience than properties of code. Product SLA /
   SLOs, error budgets, etc. work better than test coverage, static
   analysis, bug counts and QA reports (even if they have their utility.)
