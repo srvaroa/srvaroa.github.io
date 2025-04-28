@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pmap file visualizer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            height: 100vh; /* Ensure body occupies full viewport height */
+            display: flex;
+            flex-direction: column;
+        }
+        .container {
+            padding: 20px;
+            max-width: 100%;
+            padding: 0;
+            margin: 0;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            flex: 1; /* Allow container to grow and fill the viewport */
+            display: flex;
+            flex-direction: column;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            color: #444;
+        }
+        .memory-view {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+            gap: 5px;
+            border: 1px solid #ccc;
+            margin: 0;
+            padding: 10px;
+            height: 60vh; 
+            overflow-y: auto;
+            background: #fafafa;
+            border-radius: 4px;
+            flex: 1; /* Allow memory view to expand and fill available space */
+        }
+        .block {
+            width: 38px;
+            height: 38px;
+            display: inline-block;
+            position: relative;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        .block .fill {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+        }
+        .block .fill::after {
+            color: #666; /* Make the text slightly less dark */
+            font-size: 90%;
+        }
+        .block .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666; /* Make the overlay text slightly less dark */
+            z-index: 2;
+            pointer-events: none;
+            font-size: 80%;
+        }
+
+        /* Color schemes for different types */
+        .anon.rw.used .fill {
+            background-color: rgba(70, 130, 180, 0.7); /* Calm blue for rw used */
+        }
+        .anon.rw.unused .fill {
+            background-color: #b0c4de; /* Light steel blue for rw free */
+        }
+
+        .anon.r-x.used .fill {
+            background-color: rgba(220, 20, 60, 0.7); /* Crimson red for r-x used */
+        }
+        .anon.r-x.unused .fill {
+            background-color: #ffb6c1; /* Light pink for r-x free */
+        }
+
+        .library.used .fill {
+            background-color: rgba(255, 140, 0, 0.7); /* Darker orange for used */
+        }
+        .library.unused .fill {
+            background-color: #ffd580; /* Light orange for free */
+        }
+
+        .dirty.used .fill {
+            background-color: rgba(220, 20, 60, 0.7); /* Darker crimson for used */
+        }
+        .dirty.unused .fill {
+            background-color: #ffb6c1; /* Light pink for free */
+        }
+
+        .used .fill {
+            background-color: #4caf50; /* Green for used memory */
+        }
+        .unused .fill {
+            background-color: #e0e0e0; /* Light gray for unused memory */
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .file-management {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #fileDropdown, #addFiles, #clearFile, #clearAllFiles, button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: 1px solid #444;
+            background-color: #f4f4f4;
+            color: #333;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            text-align: center;
+            transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+        }
+
+        #fileDropdown {
+            width: 300px;
+            text-align: left;
+        }
+
+        #fileDropdown:hover, #addFiles:hover, #clearFile:hover, #clearAllFiles:hover, button:hover {
+            background-color: #e0e0e0;
+            color: #000;
+            border-color: #666;
+        }
+
+        #fileDropdown:focus, #addFiles:focus, #clearFile:focus, #clearAllFiles:focus, button:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .legend {
+            display: flex;
+            justify-content: space-around; /* Spread items evenly across the page */
+            align-items: center;
+            margin-bottom: 20px; /* Add spacing below the legend */
+        }
+        .legend span {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+        .current-file {
+            margin: 20px 0;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #fileDropdown {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg fill='blue' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+            background-repeat: no-repeat;
+            background-position-x: calc(100% - 10px);
+            background-position-y: center;
+        }
+
+        .dirty {
+            border: 1px solid rgba(255, 0, 0, 0.5); /* Discrete red border for dirty blocks */
+        }
+
+        .info {
+            margin: 10px auto;
+            padding: 10px;
+            color: #555;
+        }
+
+        .info p {
+            margin: 0;
+            line-height: 1.5;
+        }
+    </style>
+   <script defer src="https://eu.umami.is/script.js" data-website-id="bb30c536-a7c9-46f5-b50c-7239169c7561"></script>
+</head>
+<body>
+    <div class="container">
+        <h1><code>pmap</code> file visualizer</h1>
+        <div class="info">
+            <p>This tool creates a visual representation of <a href="https://www.man7.org/linux/man-pages/man1/pmap.1.html">pmap</a> output files. Generate them with <code>pmap -x &lt;PID&gt;</PID></code>.</p>
+            <p>Each block represents a memory region, with colours indicating type. The fill is based on actual usage (RSS).</p>
+            <p>Use the dropdown to select files, and the navigation buttons to browse through them. Add or clear files as needed.</p>
+        </div>
+        <input type="file" id="fileInput" multiple style="display: none;">
+        <div class="controls">
+            <div class="file-management">
+                <select id="fileDropdown">
+                    <option value="" disabled selected>Select files to display</option>
+                    <!-- Options will be dynamically populated -->
+                </select>
+                <button id="addFiles">Add Files</button>
+                <button id="clearFile">Clear</button>
+                <button id="clearAllFiles">Clear All</button>
+                <button id="prevFile">&#8592; Previous</button>
+                <button id="nextFile">Next &#8594;</button>
+            </div>
+        </div>
+        <div class="memory-view" id="memoryView"></div>
+        <div class="legend">
+            <p><span class="anon" style="background-color: #b0c4de; display: inline-block; width: 20px; height: 20px;"></span> Anonymous</p>
+            <p><span class="library" style="background-color: #ffd580; display: inline-block; width: 20px; height: 20px;"></span> Library</p>
+            <p><span class="dirty" style="border: 2px solid red; display: inline-block; width: 20px; height: 20px;"></span> Dirty Pages</p>
+            <p><span class="used" style="background-color: #4caf50; display: inline-block; width: 20px; height: 20px;"></span> Used Pages</p>
+            <p><span class="unused" style="background-color: #e0e0e0; display: inline-block; width: 20px; height: 20px;"></span> Unused Pages</p>
+        </div>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const fileDropdown = document.getElementById('fileDropdown');
+        const addFilesButton = document.getElementById('addFiles');
+        const clearFileButton = document.getElementById('clearFile');
+        const clearAllFilesButton = document.getElementById('clearAllFiles');
+        const memoryView = document.getElementById('memoryView');
+        const prevFileButton = document.getElementById('prevFile');
+        const nextFileButton = document.getElementById('nextFile');
+        const currentFile = document.getElementById('currentFile');
+
+        let files = [];
+        let currentFileIndex = 0;
+
+        fileInput.addEventListener('change', (event) => {
+            const newFiles = Array.from(event.target.files);
+            files = [...files, ...newFiles]; // Append new files to the existing list
+            updateFileDropdown();
+            if (files.length === newFiles.length) {
+                currentFileIndex = 0; // If this is the first set of files, show the first file
+            }
+            renderMemoryView();
+        });
+
+        addFilesButton.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        clearFileButton.addEventListener('click', () => {
+            if (files.length > 0) {
+                files.splice(currentFileIndex, 1);
+                if (files.length === 0) {
+                    currentFileIndex = 0;
+                    memoryView.innerHTML = '<p>No file selected</p>';
+                } else {
+                    currentFileIndex = Math.min(currentFileIndex, files.length - 1);
+                    renderMemoryView();
+                }
+                updateFileDropdown();
+            }
+        });
+
+        clearAllFilesButton.addEventListener('click', () => {
+            files = [];
+            currentFileIndex = 0;
+            memoryView.innerHTML = '';
+            updateFileDropdown();
+        });
+
+        fileDropdown.addEventListener('change', (event) => {
+            currentFileIndex = parseInt(event.target.value, 10);
+            renderMemoryView();
+        });
+
+        prevFileButton.addEventListener('click', () => {
+            if (files.length > 0) {
+                currentFileIndex = (currentFileIndex - 1 + files.length) % files.length;
+                updateFileDropdown(); // Update dropdown to reflect the current file
+                renderMemoryView();
+            }
+        });
+
+        nextFileButton.addEventListener('click', () => {
+            if (files.length > 0) {
+                currentFileIndex = (currentFileIndex + 1) % files.length;
+                updateFileDropdown(); // Update dropdown to reflect the current file
+                renderMemoryView();
+            }
+        });
+
+        function updateFileDropdown() {
+            fileDropdown.innerHTML = '<option value="" disabled>Select files</option>';
+            files.sort((a, b) => a.name.localeCompare(b.name)); 
+            files.forEach((file, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = file.name;
+                if (index === currentFileIndex) {
+                    option.selected = true;
+                }
+                fileDropdown.appendChild(option);
+            });
+        }
+
+        function renderMemoryView() {
+            if (files.length === 0) {
+                memoryView.innerHTML = '<p>No file selected</p>';
+                return;
+            }
+
+            const file = files[currentFileIndex];
+            const reader = new FileReader();
+
+            reader.onload = (event) => {
+                const content = event.target.result;
+                const lines = content.split('\n');
+                memoryView.innerHTML = '';
+
+                // Ignore the first two and last two lines
+                const relevantLines = lines.slice(2, -2);
+
+                relevantLines.forEach(line => {
+                    const parts = line.trim().split(/\s+/);
+                    if (parts.length >= 6) {
+                        const [address, kbytes, rss, dirty, mode, ...mappingParts] = parts;
+                        const mapping = mappingParts.join(' ');
+
+                        const block = document.createElement('div');
+                        block.classList.add('block');
+
+                        const usagePercentage = Math.round((parseInt(rss) / parseInt(kbytes)) * 100);
+
+                        const fill = document.createElement('div');
+                        fill.classList.add('fill');
+                        fill.style.height = `${usagePercentage}%`;
+
+                        const overlay = document.createElement('div');
+                        overlay.classList.add('overlay');
+                        overlay.textContent = `${usagePercentage}%`;
+
+                        if (mapping.includes('anon')) {
+                            block.classList.add('anon');
+                            if (mode.includes('rw')) {
+                                block.classList.add('rw');
+                            } else if (mode.includes('r-x')) {
+                                block.classList.add('r-x');
+                            }
+                        } else if (mapping.includes('lib')) {
+                            block.classList.add('library');
+                        }
+
+                        if (parseInt(dirty) > 0) {
+                            block.classList.add('dirty');
+                        }
+
+                        if (parseInt(rss) > 0) {
+                            block.classList.add('used');
+                        } else {
+                            block.classList.add('unused');
+                        }
+
+                        block.title = `Address: ${address}\nKbytes: ${kbytes}\nRSS: ${rss}\nDirty: ${dirty}\nMode: ${mode}\nMapping: ${mapping}`;
+
+                        block.appendChild(fill);
+                        block.appendChild(overlay);
+                        memoryView.appendChild(block);
+                    }
+                });
+            };
+
+            reader.readAsText(file);
+        }
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowLeft') {
+                document.getElementById('prevFile').click(); // Trigger the previous file button
+            } else if (event.key === 'ArrowRight') {
+                document.getElementById('nextFile').click(); // Trigger the next file button
+            }
+        });
+    </script>
+</body>
+</html>
