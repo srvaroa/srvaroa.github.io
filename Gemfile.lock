@@ -46,6 +46,8 @@ GEM
     faraday-net_http (3.4.0)
       net-http (>= 0.5.0)
     ffi (1.17.1)
+    ffi (1.17.1-x86_64-linux-gnu)
+    ffi (1.17.1-x86_64-linux-musl)
     forwardable-extended (2.6.0)
     gemoji (4.1.0)
     github-pages (232)
@@ -90,7 +92,7 @@ GEM
       liquid (= 4.0.4)
       mercenary (~> 0.3)
       minima (= 2.5.1)
-      nokogiri (>= 1.18.9, < 2.0)
+      nokogiri (>= 1.16.2, < 2.0)
       rouge (= 3.30.0)
       terminal-table (~> 1.4)
       webrick (~> 1.8)
@@ -270,7 +272,7 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (1.8.0)
-    uri (1.0.2)
+    uri (1.0.4)
     webrick (1.9.1)
 
 PLATFORMS
