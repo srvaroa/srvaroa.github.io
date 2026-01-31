@@ -3,6 +3,7 @@ layout: post
 title:  "Kubernetes made my latency 10x higher"
 date:   2019-10-22 08:07:31 +0200
 categories: kubernetes migration latency dns java aws microservices
+highlight: true
 ---
 
 *<strong>Update</strong>: it looks this post has gotten [way more
