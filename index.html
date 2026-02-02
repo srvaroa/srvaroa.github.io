@@ -1,31 +1,60 @@
 ---
 layout: default
+title: "Galo Navarro - Principal Engineer, Distributed Systems & AI Infrastructure"
 ---
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "{{ site.title }}",
+      "url": "{{ site.url }}",
+      "description": {{ site.description | jsonify }}
+    },
+    {
+      "@type": "Blog",
+      "name": "{{ site.title }}",
+      "url": "{{ site.url }}",
+      "description": {{ site.description | jsonify }},
+      "author": {
+        "@type": "Person",
+        "name": "Galo Navarro",
+        "url": "{{ site.url }}/about"
+      },
+      "blogPost": [{% for post in site.posts %}
+        {
+          "@type": "BlogPosting",
+          "headline": {{ post.title | jsonify }},
+          "url": "{{ post.url | prepend: site.baseurl | prepend: site.url }}",
+          "datePublished": "{{ post.date | date_to_xmlschema }}"
+        }{% unless forloop.last %},{% endunless %}{% endfor %}
+      ]
+    }
+  ]
+}
+</script>
+
 <p>
-I'm a software engineer specializing in distributed systems and platform
-infrastructure. I help engineering organizations scale their delivery
-pipelines, cloud architectures, and technical operations. I'm currently
-a Principal Engineer at <a
-  href="https://midokura.com/">Midokura</a> building infrastructure and
-automation for AI workloads, and previously worked at <a
+I'm a software engineer with 10+ years in <a href="https://staffeng.com/">Staff+</a>
+roles, specializing in distributed systems, platform engineering, and
+infrastructure at scale. Currently a Principal Engineer at <a
+  href="https://midokura.com/">Midokura</a>, building GPU infrastructure
+and automation for AI workloads. Previously at <a
   href="https://www.newrelic.com/">New Relic</a>, <a
-  href="https://www.adevinta.com/">Adevinta</a>, <a
-  href="https://www.lastfm.com/">Last.fm</a> and others (see the <a
-  href="{{ site.baseUrl }}/about">about section</a> for more).
+  href="https://www.adevinta.com/">Adevinta</a> (serving 1500+ engineers), <a
+  href="https://www.lastfm.com/">Last.fm</a>, and others (see <a
+  href="/about">about</a> for more).
 </p>
 <p>
-I'm interested in how the systems we build to produce and manage
-software need to adapt as AI agents become first-class citizens.
+  Below are some pieces I wrote. You can get updates via <a
+  href="https://newsletter.varoa.net">mailing list</a> using the form below,
+  or via <a href="{{ " /feed.xml" | prepend: site.baseurl }}">RSS feed</a>
+  (expect low frequency, long form content.) I'm also at <a rel="me"
+  href="https://twitter.com/srvaroa">Twitter/X</a> and <a rel="me"
+  href="https://bsky.app/profile/varoa.net">Bluesky</a>.
 </p>
-  <p>
-    Below are some pieces I wrote. You can get updates via <a
-    href="https://newsletter.varoa.net">mailing list</a> using the form below,
-    or via <a href="{{ " /feed.xml" | prepend: site.baseurl }}">RSS feed</a>
-    (expect low frequency, long form content.) I'm also at <a rel="me"
-    href="https://bsky.app/profile/varoa.net">Bluesky</a> and <a rel="me"
-    href="https://twitter.com/srvaroa">Twitter/X</a>.
-  </p>
   
   <div class="mailing-list">
     <script src="https://cdn.jsdelivr.net/ghost/signup-form@~0.1/umd/signup-form.min.js"

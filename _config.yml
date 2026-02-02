@@ -2,10 +2,9 @@
 title: Galo Navarro
 email: anglorvaroa@gmail.com
 description: >
-  Hi I'm Galo and this is my personal site. I'm a software engineer with
-  a background in distributed systems, scalability and data plumbing.
-  This site collects some of the stuff I make, and writings mostly about
-  and around software engineering.
+  Galo Navarro — Principal Engineer specializing in distributed systems,
+  platform engineering, and infrastructure for AI workloads. Writing about
+  Kubernetes, delivery pipelines, and scaling engineering organizations.
 baseurl: "/" 
 url: "https://varoa.net"
 twitter_username: srvaroa
