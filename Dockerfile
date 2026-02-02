@@ -1,36 +1,18 @@
-# Copied from https://github.com/madduci/docker-github-pages
-FROM alpine:latest
+FROM ruby:3.2-alpine
 
-VOLUME /site
-
-EXPOSE 4000
+RUN apk add --no-cache \
+    build-base \
+    git \
+    nodejs \
+    npm
 
 WORKDIR /site
 
-RUN apk update && \
-    apk --update add \
-    gcc \
-    g++ \
-    make \
-    git \
-    curl \
-    bison \
-    ca-certificates \
-    tzdata \
-    ruby \
-    ruby-rdoc \
-    ruby-irb \
-    ruby-bundler \
-    ruby-nokogiri \
-    ruby-dev \
-    glib-dev \
-    zlib-dev \
-    libc-dev && \
-    echo 'gem: --no-document' > /etc/gemrc && \
-    gem install github-pages --version 232 && \
-    gem install jekyll-watch && \
-    gem install jekyll-admin && \
-    rm -rf /var/cache/apk/*
+COPY Gemfile Gemfile.lock* ./
+RUN bundle install
 
-CMD ["exec", "jekyll"]
-ENTRYPOINT ["bundle"]
+COPY . .
+
+EXPOSE 4000
+
+CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0", "--livereload"]
