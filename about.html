@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "About me"
+title: "About"
 ---
 
 <script type="application/ld+json">
@@ -9,13 +9,13 @@ title: "About me"
   "@type": "Person",
   "name": "Galo Navarro",
   "url": "{{ site.url }}/about",
-  "jobTitle": "Principal Engineer",
+  "jobTitle": "Principal Software Engineer",
   "worksFor": {
     "@type": "Organization",
     "name": "Midokura",
     "url": "https://midokura.com/"
   },
-  "knowsAbout": ["Distributed Systems", "Platform Engineering", "Kubernetes", "Continuous Delivery", "AI Infrastructure", "JVM", "Cloud Architecture"],
+  "knowsAbout": ["Distributed Systems", "Developer Platforms", "AI Infrastructure", "Kubernetes", "Continuous Delivery", "JVM", "Cloud Architecture"],
   "sameAs": [
     "https://github.com/srvaroa",
     "https://twitter.com/srvaroa",
@@ -24,29 +24,24 @@ title: "About me"
 }
 </script>
 
-<p class="box">
-Available for short/medium term consulting or contract work.
-<a href="mailto:anglorvaroa@gmail.com"> Get in touch</a>!
-</p>
+{% include intro.html %}
 
-<p>
-  I am a software engineer with 10+ years of experience in <a
-    href="https://staffeng.com/">Staff+</a> roles, specializing in
-  distributed systems, platform engineering, AI infrastructure, and continuous delivery,
-  including a 2 year stint as Technical Product Manager. I excel in
-  hands-on roles, combining technical execution with strategic thinking,
-  and translating business and technical problems across large
-  organizations. 
-</p>
+<h2>Professional experience</h2>
+
 <p>
   <em>(Since 2022)</em>:
   <strong>Principal Software Engineer at <a href="https://midokura.com/">Midokura</a></strong>.
-  We build systems to orchestrate, monitor and manage GPU servers and
-  high-bandwidth network fabric for AI workloads, deployed in private
-  datacenters. On an earlier project, I worked for ~3y on Sony's Edge AI
-  sensing platform. We build systems to manage fleets of edge devices,
-  deploy AI vision models, and stream real-time inferences to the cloud.
+  We build systems to orchestrate, monitor and manage GPU servers and high-bandwidth network
+  fabric for AI workloads, deployed in private datacenters. On an earlier project, I worked
+  for ~3y on Sony's Edge AI sensing platform, managing fleets of cameras with intelligent sensors
+  running AI vision models, and streaming real-time inferences to the cloud. Notable projects:
   <ul>
+    <li>
+      Design and implement systems to automate provisioning, management
+      and operations of GPU infrastructure deployed in private
+      datacenters, as well as multi-tenant IaaS/PaaS layers to
+      commoditize AI workload orchestration.
+    </li>
     <li>
       Re-architected core backend systems (MQTT, Kafka, JVM-based) for
       real-time inference streaming. Achieved 100x performance

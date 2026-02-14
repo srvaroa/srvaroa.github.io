@@ -18,36 +18,44 @@ layout: default
   <p class="post-meta">
   <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time></p>
 
-
-  <hr />
-
-    <p>
-    Any thoughts? <a href="mailto:anglorvaroa@gmail.com">send me an email!</a>
-    </p>
   </div>
 
 </article>
 
-<p style='font-size:90%; font-style:italic; text-align:center; margin-top:30px;'>
-  To get notified on new posts, follow me on
-  <a rel="me" href="https://bsky.app/profile/varoa.net">Bluesky</a> /
-  <a rel="me" href="https://twitter.com/srvaroa">Twitter</a>, or subscribe via <a href="{{ "/feed.xml" | prepend: site.baseurl
-    }}">RSS feed</a> or email:
+<hr />
+
+<div class="author-box">
+  <p>If you're working through a strategic engineering decision and want
+  a candid outside perspective from an operator who has built these systems, <a href="mailto:anglorvaroa@gmail.com">let's talk</a>.
+  Most of the advice you're getting comes from someone with a stake in
+  the answer. Mine doesn't.</p>
+</div>
+
+<div class="subscribe">
+  <p>
+    Follow on
+    <a rel="me" href="https://bsky.app/profile/varoa.net">Bluesky</a> /
+    <a rel="me" href="https://twitter.com/srvaroa">Twitter</a>,
+    or subscribe via <a href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS</a>
+    or email:
+  </p>
   <div class="mailing-list">
     <script
       src="https://cdn.jsdelivr.net/ghost/signup-form@~0.1/umd/signup-form.min.js" data-button-color="#4595DB" data-button-text-color="#FFFFFF" data-site="https://newsletter.varoa.net/" async>
     </script>
   </div>
-</p>
+</div>
 
-<h2>Archive</h2>
-
-<p>
-  <ul class="post-list">
-    {% for post in site.posts %}
+<div class="recent-posts">
+  <h3>More writing</h3>
+  <ul class="post-list archive">
+    {% assign other_posts = site.posts | where_exp: "p", "p.url != page.url" %}
+    {% for post in other_posts limit:6 %}
       <li>
-        <a href="{{ post.url }}">{% if post.highlight %}⭐ {% endif %}{{ post.title }}</a>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        <span class="post-date">{{ post.date | date: "%b %Y" }}</span>
       </li>
     {% endfor %}
-  </ul> 
-</p>
+    <li class="see-all"><a href="/">See all &rarr;</a></li>
+  </ul>
+</div>

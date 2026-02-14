@@ -2,6 +2,7 @@
 layout: post
 title:  "DirectBuffer creation / disposal has hidden contention on sun.misc.Cleaner"
 date:   2016-08-28 19:00:00 +0200
+excerpt: "A debugging session into blocked JVM threads reveals hidden contention in the sun.misc.Cleaner class when creating and disposing DirectByteBuffers."
 categories: java jvm unsafe
 ---
 

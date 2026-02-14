@@ -2,6 +2,7 @@
 layout: post
 title:  "How about we forget the concept of test types?"
 date:   2024-02-06 23:00:00 +0200
+excerpt: "Unit, integration, end-to-end: the taxonomy we use to reason about testing shapes how entire organisations design and evolve their pipelines. That taxonomy has a flaw, and it has real costs."
 categories:
 ---
 

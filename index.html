@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Galo Navarro - Principal Engineer, Distributed Systems & AI Infrastructure"
+title: "Galo Navarro - Principal Software Engineer | Distributed Systems, Developer Platforms, AI Infrastructure"
 ---
 
 <script type="application/ld+json">
@@ -36,41 +36,52 @@ title: "Galo Navarro - Principal Engineer, Distributed Systems & AI Infrastructu
 }
 </script>
 
-<p>
-I'm a software engineer with 10+ years in <a href="https://staffeng.com/">Staff+</a>
-roles, specializing in distributed systems, platform engineering, and
-infrastructure at scale. Currently a Principal Engineer at <a
-  href="https://midokura.com/">Midokura</a>, building GPU infrastructure
-and automation for AI workloads. Previously at <a
-  href="https://www.newrelic.com/">New Relic</a>, <a
-  href="https://www.adevinta.com/">Adevinta</a>, <a
-  href="https://www.lastfm.com/">Last.fm</a>, and others (see <a
-  href="/about">about</a> for more).
-</p>
-<p>
-  Below are some pieces I wrote. You can get updates via <a
-  href="https://newsletter.varoa.net">mailing list</a> using the form below,
-  or via <a href="{{ " /feed.xml" | prepend: site.baseurl }}">RSS feed</a>
-  (expect low frequency, long form content.) I'm also at <a rel="me"
-  href="https://twitter.com/srvaroa">Twitter/X</a> and <a rel="me"
-  href="https://bsky.app/profile/varoa.net">Bluesky</a>.
-</p>
-  
+{% include intro.html %}
+
+<div class="subscribe">
+  <p>Get updates via
+    <a href="{{ " /feed.xml" | prepend: site.baseurl }}">RSS feed</a> or 
+    <a href="https://newsletter.varoa.net">mailing list</a>.
+  </p>
+
   <div class="mailing-list">
     <script src="https://cdn.jsdelivr.net/ghost/signup-form@~0.1/umd/signup-form.min.js"
             data-button-color="#4595DB" data-button-text-color="#FFFFFF"
             data-site="https://newsletter.varoa.net/" async>
     </script>
   </div>
+</div>
   
-<h2>Archive</h2>
+{% assign latest = site.posts | first %}
+{% assign highlighted = site.posts | where: "highlight", true %}
+{% assign latest_is_highlighted = highlighted | where: "url", latest.url %}
 
-<p>
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <a href="{{ post.url }}">{% if post.highlight %}⭐ {% endif %}{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul> 
-</p>
+{% if latest and latest_is_highlighted.size == 0 %}
+<div class="index-latest">
+  <p class="index-label">Latest</p>
+  <h2><a href="{{ latest.url }}">{{ latest.title }}</a></h2>
+  <p class="index-date">{{ latest.date | date: "%B %-d, %Y" }}</p>
+  {% if latest.excerpt %}<p class="index-excerpt">{{ latest.excerpt }}</p>{% endif %}
+</div>
+{% endif %}
+
+{% if highlighted.size > 0 %}
+<div class="index-selected">
+  <p class="index-label">Highlights</p>
+  {% for post in highlighted %}
+  <div class="index-post">
+    <a href="{{ post.url }}">{{ post.title }}</a>
+    {% if post.excerpt %}<p class="index-excerpt">{{ post.excerpt }}</p>{% endif %}
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+<div class="index-archive">
+  <p class="index-label">All writing</p>
+  <ul class="post-list archive">
+    {% for post in site.posts %}{% unless post.highlight %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endunless %}{% endfor %}
+  </ul>
+</div>
