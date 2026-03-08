@@ -2,6 +2,7 @@
 layout: post
 title:  "Why aren't we all serverless yet?"
 date:   2025-01-09 13:00:00 +0200
+excerpt: "Serverless promises to abstract away infrastructure entirely. So why hasn't it won? The gap between a clean pitch and what organisations actually face when they go to adopt it explains a lot about how technology bets go wrong."
 categories:
 ---
 

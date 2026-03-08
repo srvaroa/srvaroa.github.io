@@ -1,9 +1,8 @@
 <header class="site-header">
-  <a class="site-title" href="/">{{ site.title }}</a>
+  <a class="site-title {% if page.url == '/' %}active{% endif %}" href="/">{{ site.title }}</a>
   <nav class="site-nav">
     <ul>
-      <li><a href="/about.html">About</a></li>
-      <li><a href="/contact.html">Contact</a></li>
+      <li><a {% if page.url == '/about.html' %}class="active"{% endif %} href="/about.html">About</a></li>
     </ul>
   </nav>
 </header>

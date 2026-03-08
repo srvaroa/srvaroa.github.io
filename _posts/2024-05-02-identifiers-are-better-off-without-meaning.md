@@ -2,6 +2,7 @@
 layout: post
 title:  "Identifiers are better off without meaning"
 date:   2024-05-02 00:01:00 +0200
+excerpt: "IDs with semantic meaning look like a good idea until the meaning changes. It happens at every scale: a tale of integer overflows, social network taxonomies, and the hidden cost of clever shortcuts."
 categories:
 ---
 

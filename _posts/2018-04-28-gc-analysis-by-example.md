@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "GC forensics by example: multi-second pauses and allocation
-pressure"
+title:  "GC forensics by example: multi-second pauses and allocation pressure"
 date:   2018-04-28 11:31:22 +0200
+excerpt: "Analyzing a Hotspot GC log exhibiting minute-long pauses and allocation pressure as a cause of pathological garbage collector behaviour."
 categories: gc jvm java garbage-collection latency gc-pause
 ---
 

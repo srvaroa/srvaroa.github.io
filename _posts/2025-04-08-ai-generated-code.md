@@ -2,7 +2,9 @@
 layout: post
 title:  "AI-generated code will choke delivery pipelines"
 date:   2025-04-07 13:00:00 +0200
+excerpt: "Everyone is measuring what AI does to code production. Nobody is measuring what it does to everything downstream: build, test, review, deploy, operate. The DORA data is already showing the strain."
 categories:
+highlight: true
 ---
 
 Everyone is focused on the impact of AI on the production of code. But

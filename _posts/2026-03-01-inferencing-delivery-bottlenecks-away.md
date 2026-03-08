@@ -2,6 +2,7 @@
 layout: post
 title:  "Inferencing delivery bottlenecks away"
 date:   2026-03-01 13:00:00 +0200
+excerpt: "The oldest trade-off in testing: fast feedback vs. real coverage. AI can now reason about which tests are relevant to a given change. The assumptions you held about that trade-off are worth revisiting."
 categories:
 ---
 

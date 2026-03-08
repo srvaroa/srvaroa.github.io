@@ -2,6 +2,7 @@
 layout: post
 title:  "How organisations cripple engineering teams with good intentions"
 date:   2024-01-09 13:00:00 +0200
+excerpt: "The structural patterns that slow down engineering teams are rarely malicious -- they are the predictable outcome of good intentions applied without understanding how the system responds."
 categories:
 ---
 

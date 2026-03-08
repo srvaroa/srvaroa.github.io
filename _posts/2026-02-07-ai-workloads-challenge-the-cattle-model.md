@@ -2,6 +2,7 @@
 layout: post
 title:  "AI workloads challenge the cattle model"
 date:   2026-02-07 13:00:00 +0200
+excerpt: "The infrastructure assumptions that made Kubernetes successful break when you point it at AI workloads. Generic abstractions applied from inertia get expensive fast -- and treating six-figure hardware as disposable cattle has consequences."
 categories:
 ---
 

@@ -2,6 +2,7 @@
 layout: post
 title:  "Code reviews can't keep up"
 date:   2026-02-22 13:00:00 +0200
+excerpt: "Code review boards are clogged and the back-pressure is spreading. The goals of review -- knowledge transfer, consistency, collective ownership -- are still valid. The process that serves them is not."
 categories:
 ---
 

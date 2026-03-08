@@ -2,6 +2,7 @@
 layout: post
 title:  "Alert on symptoms, not causes"
 date:   2024-03-06 14:00:00 +0200
+excerpt: "The abundance of observability tooling creates a decision problem: what should actually wake you up? The answer is about the difference between measuring the system and measuring the business impact."
 categories:
 ---
 When you are bringing a new system to production you know that you ought

@@ -2,6 +2,7 @@
 layout: post
 title:  "Migrating an Eureka-based microservice fleet to Kubernetes"
 date:   2020-02-12 14:00:00 +0200
+excerpt: "Practical lessons from migrating a large microservice fleet off Eureka service discovery and onto Kubernetes-native load balancing."
 categories: kubernetes eureka paas microservices loadbalancing
 ---
 

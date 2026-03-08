@@ -2,8 +2,9 @@
 layout: post
 title:  "Talk write-up: \"How to build a PaaS for 1500 engineers\""
 date:   2020-01-02 12:00:00 +0200
-categories: paas infrastructure platform kubernetes cloud
 highlight: true
+excerpt: "The technical and organisational decisions behind building a Kubernetes-based platform serving 1500 engineers across Adevinta's marketplace portfolio."
+categories: paas infrastructure platform kubernetes cloud
 ---
 
 *This article is based on a presentation I gave as part of
