@@ -2,9 +2,10 @@
 title: Galo Navarro
 email: anglorvaroa@gmail.com
 description: >
-  Galo Navarro — Principal Engineer specializing in distributed systems,
-  platform engineering, and infrastructure for AI workloads. Writing about
-  Kubernetes, delivery pipelines, and scaling engineering organizations.
+  Software engineer with 20+ years on distributed systems, developer
+  platforms, and cloud infrastructure at scale. Staff+ and TPM roles.
+  Currently building GPU infrastructure and orchestration for AI
+  workloads.
 baseurl: "/" 
 url: "https://varoa.net"
 twitter_username: srvaroa
