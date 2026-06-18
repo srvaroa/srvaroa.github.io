@@ -52,26 +52,36 @@ title: "Galo Navarro - Principal Software Engineer | Distributed Systems, Develo
   </div>
 </div>
   
-<h3 class="theme-heading">Highlights</h3>
+{% assign latest = site.posts | first %}
 {% assign highlighted = site.posts | where: "highlight", true %}
-{% if highlighted.size > 0 %}
-<ul class="post-list themed">
-  {% for post in highlighted %}
-  <li>
-    <div class="post-title-row">
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </div>
-    {% if post.excerpt %}<p class="post-excerpt">{{ post.excerpt }}</p>{% endif %}
-  </li>
-  {% endfor %}
-</ul>
+{% assign latest_is_highlighted = highlighted | where: "url", latest.url %}
+
+{% if latest and latest_is_highlighted.size == 0 %}
+<div class="index-latest">
+  <p class="index-label">Latest</p>
+  <h2><a href="{{ latest.url }}">{{ latest.title }}</a></h2>
+  <p class="index-date">{{ latest.date | date: "%B %-d, %Y" }}</p>
+  {% if latest.excerpt %}<p class="index-excerpt">{{ latest.excerpt }}</p>{% endif %}
+</div>
 {% endif %}
 
-<h3 class="theme-heading">All writing</h3>
-<ul class="post-list archive">
-  {% for post in site.posts %}{% unless post.highlight %}
-  <li>
+{% if highlighted.size > 0 %}
+<div class="index-selected">
+  <p class="index-label">Highlights</p>
+  {% for post in highlighted %}
+  <div class="index-post">
     <a href="{{ post.url }}">{{ post.title }}</a>
-  </li>
-  {% endunless %}{% endfor %}
-</ul>
+    {% if post.excerpt %}<p class="index-excerpt">{{ post.excerpt }}</p>{% endif %}
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+<div class="index-archive">
+  <p class="index-label">All writing</p>
+  <ul class="post-list archive">
+    {% for post in site.posts %}{% unless post.highlight %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endunless %}{% endfor %}
+  </ul>
+</div>
