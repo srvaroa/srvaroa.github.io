@@ -164,16 +164,59 @@ h3 {
 }
 
 .theme-heading {
-  font-size: 1em;
+  font-size: 0.95em;
   font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #888;
-  margin-bottom: 4px;
+  color: #4A4A4A;
+  margin: 24px 0 4px 0;
+}
+
+.page-content section {
+  margin: 40px 0;
+}
+
+.meta {
+  font-size: 0.85em;
+  color: #999;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding: 6px 0;
+    margin-bottom: 0;
+  }
+
+  &.work li {
+    display: block;
+    padding: 12px 0;
+    border-top: 1px solid #e8e8e8;
+
+    &:last-child {
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    .what {
+      font-weight: bold;
+      color: #222;
+    }
+
+    p {
+      margin: 4px 0 0 0;
+      font-size: 0.95em;
+      color: #555;
+    }
+  }
 }
 
 .index-label {
-  font-size: 0.8em;
+  font-size: 0.95em;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -322,6 +365,13 @@ h3 {
   margin: 0 auto;
 }
 
+#writing .mailing-list {
+  max-width: 420px;
+  margin: 0 auto 0.5em;
+  transform: scale(0.8);
+  transform-origin: top center;
+}
+
 /* Image grid */
 
 .image-grid {
@@ -369,6 +419,11 @@ h3 {
 
   .box {
     padding: 10px;
+  }
+
+  .list li {
+    flex-wrap: wrap;
+    gap: 0 12px;
   }
 
   .site-footer {

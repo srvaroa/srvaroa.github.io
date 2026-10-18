@@ -1,6 +1,9 @@
 ---
 layout: default
-title: "Galo Navarro - Principal Software Engineer | Distributed Systems, Developer Platforms, AI Infrastructure"
+title: "Galo Navarro"
+description: "Galo Navarro. Principal Software Engineer. Infrastructure
+and orchestration for AI workloads. Software delivery pipelines and
+developer platforms"
 ---
 
 <script type="application/ld+json">
@@ -36,52 +39,98 @@ title: "Galo Navarro - Principal Software Engineer | Distributed Systems, Develo
 }
 </script>
 
-{% include intro.html %}
+  <section>
+    {% include intro.html %}
+  </section>
 
-<div class="subscribe">
-  <p>Get updates via
-    <a href="{{ " /feed.xml" | prepend: site.baseurl }}">RSS feed</a> or 
-    <a href="https://newsletter.varoa.net">mailing list</a>.
-  </p>
+  <section id="work">
+    <p class="index-label">Projects</p>
+    <ul class="list work">
+      <li>
+        <span class="what">GPU infrastructure for AI workloads</span> <span class="meta">Midokura, now</span>
+        <p>Systems to provision, manage and operate GPU
+        infrastructure and high-bandwidth fabric in private datacenters.
+        Multi-tenant IaaS and PaaS layers for AI workload
+        orchestration.</p>
+      </li>
+      <li>
+        <span class="what">Sony Edge AI Sensing Platform</span> <span class="meta">Midokura, about 3 years</span>
+        <p>Re-architected the real-time inference streaming backend: 100x performance with a lower resource footprint. Moved release from manual QA to automated pipelines: cycle time cut by more than 50%, across EU and Japan teams.</p>
+      </li>
+      <li>
+        <span class="what">Entity Platform at New Relic</span> <span class="meta">2020 to 2022</span>
+        <p>The inventory of everything New Relic observes: hosts,
+        containers, services, their metadata and relationships. Most of
+        the observability product depended on it. It was on the critical path of 50 to 75% of company OKRs, under a <a href="https://docs.newrelic.com/docs/licenses/license-information/referenced-policies/service-level-availability-commitment/">99.8% SLA</a>. Led the design of the telemetry analysis system that processed millions of datapoints per second and inferred entity types and relationships from <a href="https://github.com/newrelic/entity-definitions/">open rules</a>.</p>
+      </li>
+      <li>
+        <span class="what">Internal developer platform for 1,500 engineers at Adevinta</span> <span class="meta">2016 to 2020</span>
+        <p>Kubernetes PaaS for development, delivery and operations, used by marketplaces across the group in Europe and South America. Led the migration of existing workloads from on-premise and EC2 onto it. Developer tooling from zero to hundreds of users.</p>
+      </li>
+      <li>
+        <span class="what">Network virtualization for OpenStack</span> <span class="meta">Midokura, 2013 to 2016</span>
+        <p>SDN control and data plane: L2 and VxLAN gateways, NAT, hardware VTEP integration.</p>
+      </li>
+      <li>
+        <span class="what">Music catalogue ingestion at Last.fm</span> <span class="meta">2007 to 2009</span>
+        <p>Managed the systems that ingested and served the largest
+        streaming music catalogue in the world at the time, with 60M
+        tracks, 40M users.</p>
+      </li>
+    </ul>
+    <p class="meta">Full history on <a href="/about.html">About</a>.</p>
+  </section>
 
-  <div class="mailing-list">
-    <script src="https://cdn.jsdelivr.net/ghost/signup-form@~0.1/umd/signup-form.min.js"
-            data-button-color="#4595DB" data-button-text-color="#FFFFFF"
-            data-site="https://newsletter.varoa.net/" async>
-    </script>
-  </div>
-</div>
-  
-{% assign latest = site.posts | first %}
-{% assign highlighted = site.posts | where: "highlight", true %}
-{% assign latest_is_highlighted = highlighted | where: "url", latest.url %}
+  <section id="writing">
+    <p class="index-label">Writing</p>
+    <div class="mailing-list">
+      <script src="https://cdn.jsdelivr.net/ghost/signup-form@~0.1/umd/signup-form.min.js"
+              data-button-color="#4595DB" data-button-text-color="#FFFFFF"
+              data-site="https://newsletter.varoa.net/" async>
+      </script>
+    </div>
 
-{% if latest and latest_is_highlighted.size == 0 %}
-<div class="index-latest">
-  <p class="index-label">Latest</p>
-  <h2><a href="{{ latest.url }}">{{ latest.title }}</a></h2>
-  <p class="index-date">{{ latest.date | date: "%B %-d, %Y" }}</p>
-  {% if latest.excerpt %}<p class="index-excerpt">{{ latest.excerpt }}</p>{% endif %}
-</div>
-{% endif %}
+    <p class="theme-heading">Software delivery at AI volume</p>
+    <ul class="list">
+      <li><a href="/2026/06/13/ddosing-software-delivery-pipelines.html">DDoSing software delivery pipelines</a><span class="post-date">2026</span></li>
+      <li><a href="/2026/03/01/inferencing-delivery-bottlenecks-away.html">Inferencing delivery bottlenecks away</a><span class="post-date">2026</span></li>
+      <li><a href="/2026/02/22/code-reviews-cant-keep-up.html">Code reviews can't keep up</a><span class="post-date">2026</span></li>
+      <li><a href="/2025/04/07/ai-generated-code.html">AI-generated code will choke delivery pipelines</a><span class="post-date">2025</span></li>
+    </ul>
 
-{% if highlighted.size > 0 %}
-<div class="index-selected">
-  <p class="index-label">Highlights</p>
-  {% for post in highlighted %}
-  <div class="index-post">
-    <a href="{{ post.url }}">{{ post.title }}</a>
-    {% if post.excerpt %}<p class="index-excerpt">{{ post.excerpt }}</p>{% endif %}
-  </div>
-  {% endfor %}
-</div>
-{% endif %}
+    <p class="theme-heading">Infrastructure for AI</p>
+    <ul class="list">
+      <li><a href="/2026/02/07/ai-workloads-challenge-the-cattle-model.html">AI workloads challenge the cattle model</a><span class="post-date">2026</span></li>
+    </ul>
 
-<div class="index-archive">
-  <p class="index-label">All writing</p>
-  <ul class="post-list archive">
-    {% for post in site.posts %}{% unless post.highlight %}
-    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endunless %}{% endfor %}
-  </ul>
-</div>
+    <p class="theme-heading">Platforms and operations</p>
+    <ul class="list">
+      <li><a href="/2026/01/30/poc.html">PoC is a framework of perverse incentives</a><span class="post-date">2026</span></li>
+      <li><a href="/2025/01/09/serverless.html">Why aren't we all serverless yet?</a><span class="post-date">2025</span></li>
+      <li><a href="/2024/05/01/identifiers-are-better-off-without-meaning.html">Identifiers are better off without meaning</a><span class="post-date">2024</span></li>
+      <li><a href="/2024/03/06/alert-on-symptoms-not-causes.html">Alert on symptoms, not causes</a><span class="post-date">2024</span></li>
+      <li><a href="/2024/02/06/how-about-we-forget-the-concept-of-test-types.html">How about we forget the concept of test types?</a><span class="post-date">2024</span></li>
+      <li><a href="/2024/01/09/how-organisations-cripple-engineering-teams-with-good-intentions.html">How organisations cripple engineering teams with good intentions</a><span class="post-date">2024</span></li>
+      <li><a href="/kubernetes/eureka/paas/microservices/loadbalancing/2020/02/12/eureka-kubernetes.html">Migrating an Eureka-based microservice fleet to Kubernetes</a><span class="post-date">2020</span></li>
+      <li><a href="/paas/infrastructure/platform/kubernetes/cloud/2020/01/02/talk-how-to-build-a-paas-for-1500-engineers.html">How to build a PaaS for 1500 engineers</a><span class="post-date">2020</span></li>
+      <li><a href="/kubernetes/migration/latency/dns/java/aws/microservices/2019/10/22/kubernetes-added-a-0-to-my-latency.html">Kubernetes made my latency 10x higher</a><span class="post-date">2019</span></li>
+    </ul>
+
+    <p class="theme-heading">JVM internals</p>
+    <ul class="list">
+      <li><a href="/jvm/kubernetes/memory/docker/oomkiller/2019/05/29/k8s-and-java.html">Sizing Kubernetes pods for JVM apps without fearing the OOM Killer</a><span class="post-date">2019</span></li>
+      <li><a href="/gc/jvm/java/garbage-collection/latency/gc-pause/2018/04/28/gc-analysis-by-example.html">GC forensics by example: multi-second pauses and allocation pressure</a><span class="post-date">2018</span></li>
+      <li><a href="/jvm/java/openjdk/biased-locking/2017/01/30/hashCode.html">How does the default hashCode() work?</a><span class="post-date">2017</span></li>
+      <li><a href="/java/jvm/unsafe/2016/08/28/sun-misc-cleaner.html">DirectBuffer creation and disposal has hidden contention on sun.misc.Cleaner</a><span class="post-date">2016</span></li>
+    </ul>
+  </section>
+
+  <section id="talks">
+    <p class="index-label">Talks</p>
+    <ul class="list">
+      <li><span><a href="https://www.youtube.com/watch?v=dDFPVrBtoFI">How we built a PaaS for 1,500 engineers</a><br><span class="meta">The Adevinta platform: why we built it, how, and how we measured it.</span></span><span class="post-date">PlatformCon, 2022</span></li>
+      <li><span><a href="https://www.youtube.com/watch?v=ApEOiNC4GrA">Salesman tricks for the Platform Engineer</a><br><span class="meta">How the Adevinta platform team got other teams to adopt the platform.</span></span><span class="post-date">PlatformCon, 2022</span></li>
+      <li><span><a href="/java/jvm/zeroallocations/2016/12/06/frugal.html">Frugal memory management on the JVM</a></span><span class="post-date">Meetup, 2016</span></li>
+    </ul>
+  </section>
+
