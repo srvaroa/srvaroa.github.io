@@ -2,10 +2,8 @@
 title: Galo Navarro
 email: anglorvaroa@gmail.com
 description: >
-  Principal software engineer with 20+ years building and operating
-  distributed systems, developer platforms, and cloud infrastructure
-  at scale. Writing about technology strategy, AI adoption decisions,
-  and the engineering behind them.
+  Principal Software Engineer. Infrastructure and orchestration for AI
+  workloads. Software delivery pipelines and developer platforms. 
 baseurl: "/" 
 url: "https://varoa.net"
 twitter_username: srvaroa
