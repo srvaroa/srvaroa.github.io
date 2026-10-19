@@ -26,7 +26,7 @@ layout: default
 
 <div class="author-box">
   <p>If you're working through a strategic engineering decision and want
-  a candid outside perspective from an operator who has built these systems, <a href="mailto:anglorvaroa@gmail.com">let's talk</a>.
+  a candid outside perspective from an operator who has built these systems, <a data-umami-event="click-email" data-umami-event-location="post-author-box" href="mailto:anglorvaroa@gmail.com">let's talk</a>.
   Most of the advice you're getting comes from someone with a stake in
   the answer. Mine doesn't.</p>
 </div>
@@ -34,9 +34,9 @@ layout: default
 <div class="subscribe">
   <p>
     Follow on
-    <a rel="me" href="https://bsky.app/profile/varoa.net">Bluesky</a> /
-    <a rel="me" href="https://twitter.com/srvaroa">Twitter</a>,
-    or subscribe via <a href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS</a>
+    <a data-umami-event="click-bluesky" data-umami-event-location="post-subscribe" rel="me" href="https://bsky.app/profile/varoa.net">Bluesky</a> /
+    <a data-umami-event="click-twitter" data-umami-event-location="post-subscribe" rel="me" href="https://twitter.com/srvaroa">Twitter</a>,
+    or subscribe via <a data-umami-event="click-rss" data-umami-event-location="post-subscribe" href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS</a>
     or email:
   </p>
   <div class="mailing-list">
@@ -52,10 +52,32 @@ layout: default
     {% assign other_posts = site.posts | where_exp: "p", "p.url != page.url" %}
     {% for post in other_posts limit:6 %}
       <li>
-        <a href="{{ post.url }}">{{ post.title }}</a>
+        <a data-umami-event="click-more-writing" data-umami-event-location="post-footer" href="{{ post.url }}">{{ post.title }}</a>
         <span class="post-date">{{ post.date | date: "%b %Y" }}</span>
       </li>
     {% endfor %}
     <li class="see-all"><a href="/">See all &rarr;</a></li>
   </ul>
 </div>
+
+<script>
+  // Fire one Umami event per depth reached (50% and 90% of the article body).
+  (function () {
+    var body = document.querySelector(".post-content");
+    if (!body) return;
+    var marks = [50, 90], sent = {};
+    function check() {
+      var r = body.getBoundingClientRect();
+      var seen = (window.innerHeight - r.top) / r.height * 100;
+      marks.forEach(function (m) {
+        if (!sent[m] && seen >= m) {
+          sent[m] = true;
+          if (window.umami) window.umami.track("scroll-" + m);
+        }
+      });
+      if (sent[90]) window.removeEventListener("scroll", check);
+    }
+    window.addEventListener("scroll", check, { passive: true });
+    check();
+  })();
+</script>
