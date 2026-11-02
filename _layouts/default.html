@@ -13,6 +13,18 @@
 
     {% include footer.html %}
 
+    <script>
+      // Add ref=varoa.net to outbound http(s) links. Skip links that already have a ref.
+      document.querySelectorAll("a[href]").forEach(function (a) {
+        if (!/^https?:$/.test(a.protocol) || a.hostname === location.hostname) return;
+        if (a.hostname === "varoa.net" || a.hostname.slice(-10) === ".varoa.net") return;
+        var u = new URL(a.href);
+        if (u.searchParams.has("ref")) return;
+        u.searchParams.set("ref", "varoa.net");
+        a.href = u.href;
+      });
+    </script>
+
   </body>
 
 </html>
