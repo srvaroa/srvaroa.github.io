@@ -224,62 +224,6 @@ h3 {
   margin: 0 0 10px 0;
 }
 
-.index-latest {
-  margin: 32px 0;
-
-  h2 {
-    margin: 0 0 4px 0;
-    font-size: 1.4em;
-    a {
-      color: #222;
-      &:hover { color: #007BFF; text-decoration: none; }
-    }
-  }
-}
-
-.index-date {
-  font-size: 0.85em;
-  color: #999;
-  margin: 0 0 10px 0;
-}
-
-.index-excerpt {
-  font-size: 0.95em;
-  color: #555;
-  margin: 6px 0 0 0;
-  line-height: 1.55;
-}
-
-.index-selected {
-  margin: 32px 0;
-
-  .index-post {
-    padding: 14px 0;
-    border-top: 1px solid #e8e8e8;
-
-    a {
-      font-weight: bold;
-      color: #222;
-      &:hover { color: #007BFF; text-decoration: none; }
-    }
-
-    &:last-child {
-      border-bottom: 1px solid #e8e8e8;
-    }
-  }
-}
-
-.index-archive {
-  margin: 32px 0;
-}
-
-.post-excerpt {
-  font-size: 0.9em;
-  color: #555;
-  margin: 6px 0 0 0;
-  line-height: 1.5;
-}
-
 .post-date {
   font-size: 0.8em;
   color: #999;
@@ -301,27 +245,6 @@ h3 {
   }
 }
 
-
-.author-box {
-  margin: 30px 0 24px 0;
-  padding: 20px 24px;
-  background-color: rgb(235, 240, 250);
-  border-left: 3px solid #007BFF;
-  font-size: 0.93em;
-  color: #444;
-  line-height: 1.6;
-
-  p {
-    margin: 0 0 10px 0;
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  a {
-    color: #007BFF;
-  }
-}
 
 .subscribe {
   text-align: center;

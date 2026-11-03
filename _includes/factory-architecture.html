@@ -1,0 +1,114 @@
+<style>
+.fx-arch {
+  --fx-ink: #111827;
+  --fx-mute: #6b7280;
+  --fx-line: #9ca3af;
+  --fx-accent: #4f46e5;
+  --fx-soft: #eef2ff;
+  --fx-ext: #d97706;
+  --fx-ext-soft: #fffbeb;
+  --fx-bg: #fff;
+  margin: 2rem 0;
+  padding: 8px;
+  background: var(--fx-bg);
+  color: var(--fx-ink);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.fx-arch svg { width: 100%; min-width: 640px; height: auto; display: block; }
+.fx-arch .box { fill: #fff; stroke: var(--fx-line); stroke-width: 1.2; }
+.fx-arch .box.accent { fill: var(--fx-soft); stroke: var(--fx-accent); }
+.fx-arch .chip { fill: #fff; stroke: var(--fx-accent); stroke-width: 1; }
+.fx-arch .box.ext { fill: var(--fx-ext-soft); stroke: var(--fx-ext); }
+.fx-arch .chip.free { stroke: var(--fx-line); stroke-dasharray: 3 3; }
+.fx-arch .store { fill: #fafafa; stroke: var(--fx-ink); stroke-width: 1.2; }
+.fx-arch .t { font-size: 13px; font-weight: 600; fill: var(--fx-ink); text-anchor: middle; }
+.fx-arch .s { font-size: 10.5px; fill: var(--fx-mute); text-anchor: middle; }
+.fx-arch .m { font-size: 10px; fill: var(--fx-mute); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; text-anchor: middle; }
+.fx-arch .lbl { font-size: 10px; fill: var(--fx-mute); text-anchor: middle; letter-spacing: .02em; }
+.fx-arch .edge { fill: none; stroke: var(--fx-accent); stroke-width: 1.4; stroke-dasharray: 4 5; animation: fx-flow 1.4s linear infinite; }
+.fx-arch .edge.quiet { stroke: var(--fx-line); animation: none; stroke-dasharray: none; }
+.fx-arch .edge.back { stroke: var(--fx-mute); stroke-dasharray: 2 5; }
+.fx-arch .tip { fill: var(--fx-accent); }
+.fx-arch .tip.quiet { fill: var(--fx-line); }
+.fx-arch .tip.back { fill: var(--fx-mute); }
+@keyframes fx-flow { to { stroke-dashoffset: -18; } }
+@media (prefers-reduced-motion: reduce) { .fx-arch .edge { animation: none; } }
+</style>
+<figure class="fx-arch">
+<svg viewBox="0 0 960 440" role="img" aria-labelledby="fx-title fx-desc">
+  <title id="fx-title">Factory architecture</title>
+  <desc id="fx-desc">GitHub webhooks reach the observer, which writes a mirror into PostgreSQL. The loop inspects that state and enqueues requests, the scheduler starts Kubernetes Jobs, and each Job runs an LLM agent that writes reviews back to GitHub.</desc>
+  <defs>
+    <marker id="fx-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="tip" d="M0 1 L10 5 L0 9z"/></marker>
+    <marker id="fx-q" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="tip quiet" d="M0 1 L10 5 L0 9z"/></marker>
+    <marker id="fx-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="tip back" d="M0 1 L10 5 L0 9z"/></marker>
+  </defs>
+  <!-- GitHub -->
+  <rect class="box ext" x="20" y="170" width="110" height="100" rx="12"/>
+  <text class="t" x="75" y="215">GitHub</text>
+  <text class="s" x="75" y="235">PRs · checks</text>
+  <text class="s" x="75" y="250">reviews</text>
+  <!-- Observer -->
+  <rect class="box" x="230" y="170" width="120" height="100" rx="12"/>
+  <text class="t" x="290" y="215">Observer</text>
+  <text class="s" x="290" y="235">webhook + resync</text>
+  <text class="s" x="290" y="250">only writer</text>
+  <!-- Postgres -->
+  <rect class="box" x="410" y="160" width="120" height="120" rx="12"/>
+  <text class="t" x="470" y="185">PostgreSQL</text>
+  <text class="s" x="470" y="219">GitHub state</text>
+  <text class="s" x="470" y="239">Agent state</text>
+  <text class="s" x="470" y="259">Audit</text>
+  <!-- Loop / Scheduler / UI -->
+  <rect class="box" x="610" y="60" width="130" height="70" rx="12"/>
+  <text class="t" x="675" y="90">Loop</text>
+  <text class="s" x="675" y="108">what work is needed?</text>
+  <rect class="box" x="610" y="185" width="130" height="70" rx="12"/>
+  <text class="t" x="675" y="215">Scheduler</text>
+  <text class="s" x="675" y="233">slots · weights</text>
+  <rect class="box" x="610" y="310" width="130" height="70" rx="12"/>
+  <text class="t" x="675" y="340">UI</text>
+  <text class="s" x="675" y="358">dashboard</text>
+  <!-- Agent slots -->
+  <rect class="box" x="800" y="150" width="140" height="144" rx="12"/>
+  <text class="t" x="870" y="172">Agent</text>
+  <text class="s" x="870" y="187">N slots · any specialist</text>
+  <rect class="chip" x="816" y="198" width="108" height="16" rx="8"/>
+  <text class="m" x="870" y="209.5">1 · nitpicker</text>
+  <rect class="chip" x="816" y="220" width="108" height="16" rx="8"/>
+  <text class="m" x="870" y="231.5">2 · handholder</text>
+  <rect class="chip" x="816" y="242" width="108" height="16" rx="8"/>
+  <text class="m" x="870" y="253.5">3 · nitpicker</text>
+  <rect class="chip free" x="816" y="264" width="108" height="16" rx="8"/>
+  <text class="m" x="870" y="275.5">4 · free</text>
+  <!-- LLM harness: fallback chain -->
+  <rect class="box accent" x="800" y="313" width="140" height="90" rx="12"/>
+  <text class="t" x="870" y="334">LLM harness</text>
+  <text class="s" x="870" y="348">fallback chain</text>
+  <rect class="chip" x="816" y="357" width="108" height="16" rx="8"/>
+  <text class="m" x="870" y="368.5">1 · opencode</text>
+  <rect class="chip" x="816" y="379" width="108" height="16" rx="8"/>
+  <text class="m" x="870" y="390.5">2 · Claude</text>
+  <!-- Edges -->
+  <path class="edge" d="M130 220 H228" marker-end="url(#fx-a)"/>
+  <text class="lbl" x="180" y="210">webhooks</text>
+  <path class="edge" d="M350 220 H408" marker-end="url(#fx-a)"/>
+  <path class="edge" d="M530 170 H555 V80 H608" marker-end="url(#fx-a)"/>
+  <path class="edge" d="M608 110 H585 V190 H530" marker-end="url(#fx-a)"/>
+  <text class="lbl" x="581" y="72">inspect</text>
+  <text class="lbl" x="591" y="158" style="text-anchor:start">enqueue</text>
+  <path class="edge" d="M530 220 H608" marker-end="url(#fx-a)"/>
+  <text class="lbl" x="577" y="210">dispatch</text>
+  <path class="edge quiet" d="M530 265 H577 V345 H608" marker-end="url(#fx-q)"/>
+  <text class="lbl" x="577" y="335">read</text>
+  <path class="edge" d="M740 205 H798" marker-end="url(#fx-a)"/>
+  <text class="lbl" x="769" y="195">Job</text>
+  <path class="edge" d="M798 245 H742" marker-end="url(#fx-a)"/>
+  <text class="lbl" x="760" y="268">results · audit</text>
+  <path class="edge" d="M870 294 V311" marker-end="url(#fx-a)"/>
+  <!-- Agent to GitHub (write-back) -->
+  <path class="edge back" d="M870 150 V28 H75 V168" marker-end="url(#fx-b)"/>
+  <text class="lbl" x="470" y="20">review comments · approvals · labels · pushes</text>
+</svg>
+</figure>
